@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="estudoModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="agenda">
+          <Key>
+            <PropertyRef Name="titulo" />
+          </Key>
+          <Property Name="titulo" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="texto" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="dt" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="registro" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="nick" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contato">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="telefonere" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="telefonecel" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="nick" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cep" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="rua" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="complemento1" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="complemento2" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="numero" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="nick" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="acesso" Type="enum" Nullable="false" />
+          <Property Name="senha" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="nick" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pesquisa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="registro" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="navegador" Type="enum" Nullable="false" />
+          <Property Name="nick" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="nick" />
+          </Key>
+          <Property Name="nick" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="dt_nascimento" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="idade" Type="int" Nullable="false" />
+          <Property Name="cargo" Type="enum" Nullable="false" />
+          <Property Name="foto" Type="longblob" />
+          <Property Name="registro" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <Association Name="agenda_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="agenda" Type="Self.agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="agenda">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="login_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="login" Type="Self.login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="login">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="nick">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pesquisa_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="pesquisa" Type="Self.pesquisa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="pesquisa">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="estudoModelStoreContainer">
+          <EntitySet Name="agenda" EntityType="Self.agenda" Schema="estudo" store:Type="Tables" />
+          <EntitySet Name="contato" EntityType="Self.contato" Schema="estudo" store:Type="Tables" />
+          <EntitySet Name="endereco" EntityType="Self.endereco" Schema="estudo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="estudo" store:Type="Tables" />
+          <EntitySet Name="pesquisa" EntityType="Self.pesquisa" Schema="estudo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="estudo" store:Type="Tables" />
+          <AssociationSet Name="agenda_ibfk_1" Association="Self.agenda_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="agenda" EntitySet="agenda" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_1" Association="Self.contato_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="login_ibfk_1" Association="Self.login_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="login" EntitySet="login" />
+          </AssociationSet>
+          <AssociationSet Name="nick" Association="Self.nick">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="pesquisa_ibfk_1" Association="Self.pesquisa_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="pesquisa" EntitySet="pesquisa" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="estudoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="agenda">
+          <Key>
+            <PropertyRef Name="titulo" />
+          </Key>
+          <Property Name="titulo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="texto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt" Type="DateTime" Nullable="false" />
+          <Property Name="registro" Type="DateTime" Nullable="false" />
+          <Property Name="nick" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.agenda_ibfk_1" FromRole="agenda" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="contato">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="telefonere" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefonecel" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nick" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.contato_ibfk_1" FromRole="contato" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cep" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rua" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="complemento1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="complemento2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nick" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.nick" FromRole="endereco" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="acesso" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="senha" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nick" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.login_ibfk_1" FromRole="login" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="pesquisa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="url" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registro" Type="DateTime" Nullable="false" />
+          <Property Name="navegador" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nick" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.pesquisa_ibfk_1" FromRole="pesquisa" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="nick" />
+          </Key>
+          <Property Name="nick" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_nascimento" Type="DateTime" Nullable="false" />
+          <Property Name="idade" Type="Int32" Nullable="false" />
+          <Property Name="cargo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="registro" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="agenda" Relationship="Self.agenda_ibfk_1" FromRole="usuario" ToRole="agenda" />
+          <NavigationProperty Name="contato" Relationship="Self.contato_ibfk_1" FromRole="usuario" ToRole="contato" />
+          <NavigationProperty Name="endereco" Relationship="Self.nick" FromRole="usuario" ToRole="endereco" />
+          <NavigationProperty Name="login" Relationship="Self.login_ibfk_1" FromRole="usuario" ToRole="login" />
+          <NavigationProperty Name="pesquisa" Relationship="Self.pesquisa_ibfk_1" FromRole="usuario" ToRole="pesquisa" />
+        </EntityType>
+        <Association Name="agenda_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="agenda" Type="Self.agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="agenda">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="nick">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="login_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="login" Type="Self.login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="login">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pesquisa_ibfk_1">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="pesquisa" Type="Self.pesquisa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="nick" />
+            </Principal>
+            <Dependent Role="pesquisa">
+              <PropertyRef Name="nick" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="estudoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="agenda" EntityType="Self.agenda" />
+          <EntitySet Name="contato" EntityType="Self.contato" />
+          <EntitySet Name="endereco" EntityType="Self.endereco" />
+          <EntitySet Name="login" EntityType="Self.login" />
+          <EntitySet Name="pesquisa" EntityType="Self.pesquisa" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <AssociationSet Name="agenda_ibfk_1" Association="Self.agenda_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="agenda" EntitySet="agenda" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_1" Association="Self.contato_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="nick" Association="Self.nick">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="login_ibfk_1" Association="Self.login_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="login" EntitySet="login" />
+          </AssociationSet>
+          <AssociationSet Name="pesquisa_ibfk_1" Association="Self.pesquisa_ibfk_1">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="pesquisa" EntitySet="pesquisa" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="estudoModelStoreContainer" CdmEntityContainer="estudoEntities">
+          <EntitySetMapping Name="agenda">
+            <EntityTypeMapping TypeName="estudoModel.agenda">
+              <MappingFragment StoreEntitySet="agenda">
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="texto" ColumnName="texto" />
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="nick" ColumnName="nick" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contato">
+            <EntityTypeMapping TypeName="estudoModel.contato">
+              <MappingFragment StoreEntitySet="contato">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="telefonere" ColumnName="telefonere" />
+                <ScalarProperty Name="telefonecel" ColumnName="telefonecel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="nick" ColumnName="nick" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="endereco">
+            <EntityTypeMapping TypeName="estudoModel.endereco">
+              <MappingFragment StoreEntitySet="endereco">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="complemento1" ColumnName="complemento1" />
+                <ScalarProperty Name="complemento2" ColumnName="complemento2" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="nick" ColumnName="nick" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="estudoModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="acesso" ColumnName="acesso" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="nick" ColumnName="nick" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pesquisa">
+            <EntityTypeMapping TypeName="estudoModel.pesquisa">
+              <MappingFragment StoreEntitySet="pesquisa">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="navegador" ColumnName="navegador" />
+                <ScalarProperty Name="nick" ColumnName="nick" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="estudoModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="nick" ColumnName="nick" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+                <ScalarProperty Name="idade" ColumnName="idade" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
