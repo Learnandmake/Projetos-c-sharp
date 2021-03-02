@@ -91,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bussines\usuario.cs" />
+    <Compile Include="Database\agenda.cs" />
+    <Compile Include="Database\contato.cs" />
+    <Compile Include="Database\Endereco.cs" />
     <Compile Include="Database\Entities\agenda.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -124,6 +127,8 @@
     <Compile Include="Database\Entities\usuario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\login.cs" />
+    <Compile Include="Database\pesquisa.cs" />
     <Compile Include="Database\usuario.cs" />
     <Compile Include="Functions\criptografia.cs" />
     <Compile Include="Functions\verificar.cs" />

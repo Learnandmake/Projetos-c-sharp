@@ -45,7 +45,6 @@ namespace Sap.Bussines
         public
         Database.Entities.usuario busca(string nick)
         {
-
             Database.Entities.usuario lista = banco.buscar(nick);
             return lista;
         }
