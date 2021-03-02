@@ -90,6 +90,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussines\agenda.cs" />
+    <Compile Include="Bussines\contato1.cs" />
+    <Compile Include="Bussines\endereco.cs" />
+    <Compile Include="Bussines\login.cs" />
+    <Compile Include="Bussines\pesquisa.cs" />
     <Compile Include="Bussines\usuario.cs" />
     <Compile Include="Database\agenda.cs" />
     <Compile Include="Database\contato.cs" />

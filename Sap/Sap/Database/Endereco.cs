@@ -44,7 +44,7 @@ namespace Sap.Database
         }
         public Entities.endereco  buscar(string nick)
         {
-            Entities.endereco  lista = banco.endereco.FirstOrDefault(t => t.nick == nick);
+          Entities.endereco  lista = banco.endereco.FirstOrDefault(t => t.nick == nick);
             return lista;
 
 
