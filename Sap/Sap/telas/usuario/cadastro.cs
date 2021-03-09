@@ -37,12 +37,19 @@ namespace Sap.telas.usuario
 
         private void picsend_Click(object sender, EventArgs e)
         {
-            Bussines.usuario ubussines = new Bussines.usuario();
+            Bussines.usuario uusuario = new Bussines.usuario();
+            Bussines.contato1 ucontato = new Bussines.contato1();
+            Bussines.endereco uendereco = new Bussines.endereco();
+            Bussines.login ulogin = new Bussines.login();
+            Bussines.pesquisa upesquisa = new Bussines.pesquisa();
+            Bussines.agenda uagenda = new Bussines.agenda();
+
             Database.Entities.usuario usuario = new Database.Entities.usuario();
             Database.Entities.contato contato = new Database.Entities.contato();
             Database.Entities.endereco endereco = new Database.Entities.endereco();
             Database.Entities.login login = new Database.Entities.login();
-            Functions.verificar Function = new Functions.verificar();
+           
+             Functions.verificar Function = new Functions.verificar();
             Functions.criptografia Criptografia = new Functions.criptografia();
             CorreiosApi correios = new CorreiosApi();
 
@@ -64,7 +71,7 @@ namespace Sap.telas.usuario
             string cep = mskcep.Text;
             var api = correios.consultaCEP(cep);
             string rua = api.end;
-            string numero = txtnumero.Text;
+            string numero = Convert.ToString( txtnumero.Text);
             string complemento1 = txtcomplemento.Text;
             string complemento2 = api.complemento;
 
@@ -81,6 +88,8 @@ namespace Sap.telas.usuario
             usuario.foto = imagebyte;
             usuario.cargo = cargo;
 
+            
+            contato.email = email;
             contato.nick = nick;
             contato.telefonecel = celular;
             contato.telefonere = residencial;
@@ -94,7 +103,11 @@ namespace Sap.telas.usuario
             login.acesso = acesso;
             login.senha = senha;
 
-           ubussines.inserir(usuario);
+            uusuario.inserir(usuario);
+            ucontato.inserir(contato);
+            uendereco.inserir(endereco);
+            ulogin.inserir(login);
+            
 
             MessageBox.Show("deu certo");
 

@@ -45,7 +45,7 @@ namespace Sap.telas.usuario
             Database.Entities.endereco endereco = new Database.Entities.endereco();
             Database.Entities.login login = new Database.Entities.login();
 
-            Bussines.usuario usuario = new Bussines.usuario();
+            Bussines.usuario busuario = new Bussines.usuario();
         
             
                        

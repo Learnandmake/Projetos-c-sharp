@@ -287,8 +287,8 @@
             // 
             this.cboacesso.FormattingEnabled = true;
             this.cboacesso.Items.AddRange(new object[] {
-            "junior,",
-            "senior,",
+            "junior",
+            "senior",
             "master"});
             this.cboacesso.Location = new System.Drawing.Point(79, 108);
             this.cboacesso.Name = "cboacesso";
