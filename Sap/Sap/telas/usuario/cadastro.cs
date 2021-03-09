@@ -77,7 +77,13 @@ namespace Sap.telas.usuario
                 string complemento1 = txtcomplemento.Text;
                 string complemento2 = api.complemento2;
 
+               bool idadeok= Function.verificaridade(nascimento);
+               if(idadeok==false)
+               { MessageBox.Show("É preciso ser maior de 18 para acessar esse sistema"); }
 
+                bool emailok = Function.isemail(email);
+                if(emailok ==false)
+                { MessageBox.Show("erro verifique seu email"); }
 
                 string senha = Criptografia.gerarmd5(Convert.ToString(txtsenha.Text));
                 string acesso = Convert.ToString(cboacesso.SelectedItem);
@@ -94,7 +100,6 @@ namespace Sap.telas.usuario
                 contato.email = email;
                 contato.telefonecel = celular;
                 contato.telefonere = residencial;
-
 
                 endereco.nick = nick;
                 endereco.rua = rua;
@@ -113,7 +118,7 @@ namespace Sap.telas.usuario
                 ulogin.inserir(login);
 
 
-                MessageBox.Show("deu certo");
+                MessageBox.Show("concluído");
             }
         
             catch(Exception)
