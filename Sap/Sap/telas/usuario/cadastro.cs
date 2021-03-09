@@ -37,80 +37,88 @@ namespace Sap.telas.usuario
 
         private void picsend_Click(object sender, EventArgs e)
         {
-            Bussines.usuario uusuario = new Bussines.usuario();
-            Bussines.contato1 ucontato = new Bussines.contato1();
-            Bussines.endereco uendereco = new Bussines.endereco();
-            Bussines.login ulogin = new Bussines.login();
-            Bussines.pesquisa upesquisa = new Bussines.pesquisa();
-            Bussines.agenda uagenda = new Bussines.agenda();
+            try
+            {
+                Bussines.usuario uusuario = new Bussines.usuario();
+                Bussines.contato1 ucontato = new Bussines.contato1();
+                Bussines.endereco uendereco = new Bussines.endereco();
+                Bussines.login ulogin = new Bussines.login();
+                Bussines.pesquisa upesquisa = new Bussines.pesquisa();
+                Bussines.agenda uagenda = new Bussines.agenda();
 
-            Database.Entities.usuario usuario = new Database.Entities.usuario();
-            Database.Entities.contato contato = new Database.Entities.contato();
-            Database.Entities.endereco endereco = new Database.Entities.endereco();
-            Database.Entities.login login = new Database.Entities.login();
-           
-             Functions.verificar Function = new Functions.verificar();
-            Functions.criptografia Criptografia = new Functions.criptografia();
-            CorreiosApi correios = new CorreiosApi();
+                Database.Entities.usuario usuario = new Database.Entities.usuario();
+                Database.Entities.contato contato = new Database.Entities.contato();
+                Database.Entities.endereco endereco = new Database.Entities.endereco();
+                Database.Entities.login login = new Database.Entities.login();
 
-            string nome = Convert.ToString( txtnome.Text);
-            string nick =Convert.ToString ( txtusuario.Text);
-            DateTime nascimento = Convert.ToDateTime( msknascimento.Text);
-            string cargo =Convert.ToString(cbocargo.SelectedItem);
-            int idade = Function.calcularidade(nascimento);
+                Functions.verificar Function = new Functions.verificar();
+                Functions.criptografia Criptografia = new Functions.criptografia();
+                CorreiosApi correios = new CorreiosApi();
 
-            byte[] imagebyte = null;//coverter imagem em bytes
-            FileStream fs = new FileStream(this.txtft.Text, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            imagebyte = br.ReadBytes((int)fs.Length);
+                string nome = Convert.ToString(txtnome.Text);
+                string nick = Convert.ToString(txtusuario.Text);
+                DateTime nascimento = Convert.ToDateTime(msknascimento.Text);
+                string cargo = Convert.ToString(cbocargo.SelectedItem);
+                int idade = Function.calcularidade(nascimento);
 
-            string celular = Convert.ToString(mskcel.Text);
-            string residencial = Convert.ToString(mskre.Text);
-            string email = Convert.ToString(txtemail.Text);
+                byte[] imagebyte = null;//coverter imagem em bytes
+                FileStream fs = new FileStream(this.txtft.Text, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                imagebyte = br.ReadBytes((int)fs.Length);
 
-            string cep = mskcep.Text;
-            var api = correios.consultaCEP(cep);
-            string rua = api.end;
-            string numero = Convert.ToString( txtnumero.Text);
-            string complemento1 = txtcomplemento.Text;
-            string complemento2 = api.complemento;
+                string celular = Convert.ToString(mskcel.Text);
+                string residencial = Convert.ToString(mskre.Text);
+                string email = Convert.ToString(txtemail.Text);
 
-            
+                string cep = mskcep.Text;
+                var api = correios.consultaCEP(cep);
+                string rua = api.end;
+                string numero = Convert.ToString(txtnumero.Text);
+                string complemento1 = txtcomplemento.Text;
+                string complemento2 = api.complemento2;
 
-            string senha = Criptografia.gerarmd5( Convert.ToString(txtsenha.Text));
-            string acesso = Convert.ToString(cboacesso.SelectedItem);
 
-            usuario.nome = nome;
-            usuario.nick = nick;
-            usuario.dt_nascimento = nascimento;
-            usuario.idade = idade;
-            usuario.registro = DateTime.Now;
-            usuario.foto = imagebyte;
-            usuario.cargo = cargo;
 
-            
-            contato.email = email;
-            contato.nick = nick;
-            contato.telefonecel = celular;
-            contato.telefonere = residencial;
+                string senha = Criptografia.gerarmd5(Convert.ToString(txtsenha.Text));
+                string acesso = Convert.ToString(cboacesso.SelectedItem);
 
-            endereco.rua = rua;
-            endereco.complemento1 = complemento1;
-            endereco.complemento2 = complemento2;
-            endereco.numero = numero;
-            endereco.cep = cep;
+                usuario.nome = nome;
+                usuario.nick = nick;
+                usuario.dt_nascimento = nascimento;
+                usuario.idade = idade;
+                usuario.registro = DateTime.Now;
+                usuario.foto = imagebyte;
+                usuario.cargo = cargo;
 
-            login.acesso = acesso;
-            login.senha = senha;
+                contato.nick = nick;
+                contato.email = email;
+                contato.telefonecel = celular;
+                contato.telefonere = residencial;
 
-            uusuario.inserir(usuario);
-            ucontato.inserir(contato);
-            uendereco.inserir(endereco);
-            ulogin.inserir(login);
-            
 
-            MessageBox.Show("deu certo");
+                endereco.nick = nick;
+                endereco.rua = rua;
+                endereco.complemento1 = complemento1;
+                endereco.complemento2 = complemento2;
+                endereco.numero = numero;
+                endereco.cep = cep;
 
-        }
+                login.nick = nick;
+                login.acesso = acesso;
+                login.senha = senha;
+
+                uusuario.inserir(usuario);
+                ucontato.inserir(contato);
+                uendereco.inserir(endereco);
+                ulogin.inserir(login);
+
+
+                MessageBox.Show("deu certo");
+            }
+        
+            catch(Exception)
+            { MessageBox.Show("erro, verifique o formulário e tente novamente"); }
+            }
+
     }
 }

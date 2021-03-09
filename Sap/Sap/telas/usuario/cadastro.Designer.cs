@@ -180,7 +180,7 @@
             // mskcel
             // 
             this.mskcel.Location = new System.Drawing.Point(269, 8);
-            this.mskcel.Mask = "(00)00000-00000";
+            this.mskcel.Mask = "(00)00000-0000";
             this.mskcel.Name = "mskcel";
             this.mskcel.Size = new System.Drawing.Size(89, 20);
             this.mskcel.TabIndex = 29;
