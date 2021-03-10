@@ -154,6 +154,37 @@ namespace Sap.telas.usuario
 
             string senha = Criptografia.gerarmd5(Convert.ToString(txtsenha.Text));
             string acesso = Convert.ToString(cboacesso.SelectedItem);
+
+            usuario.nome = nome;
+            usuario.nick = nick;
+            usuario.dt_nascimento = nascimento;
+            usuario.idade = idade;
+            usuario.registro = DateTime.Now;
+            usuario.foto = imagebyte;
+            usuario.cargo = cargo;
+
+            contato.nick = nick;
+            contato.email = email;
+            contato.telefonecel = celular;
+            contato.telefonere = residencial;
+
+            endereco.nick = nick;
+            endereco.rua = rua;
+            endereco.complemento1 = complemento1;
+            endereco.complemento2 = complemento2;
+            endereco.numero = numero;
+            endereco.cep = cep;
+
+            login.nick = nick;
+            login.acesso = acesso;
+            login.senha = senha;
+
+            uusuario.alterar(usuario);
+            ucontato.alterar(contato);
+            uendereco.alterar(endereco);
+            ulogin.alterar(login);
+
+            MessageBox.Show("Concluido");
         }
     }
 }
