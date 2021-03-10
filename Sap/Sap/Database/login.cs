@@ -15,7 +15,13 @@ namespace Sap.Database
             banco.SaveChanges();
 
         }
+        public int vlogin (string nick, string senha)
+        {
+            int login = banco.login.Count(t => t.nick == nick && t.senha == senha);
 
+            return login;
+
+        }
         public Entities.login buscar(string nick)
         {
             Entities.login lista = banco.login.FirstOrDefault(t => t.nick == nick);

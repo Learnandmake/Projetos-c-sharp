@@ -9,9 +9,14 @@ namespace Sap.Bussines
     class login
     {
         Database.login banco = new Database.login();
-        public void inserir(Database.Entities.login dados)
+       
+        public int vlogin (string nick, string senha)
         {
-
+          int count=  banco.vlogin(nick, senha);
+            return count;
+          }
+         public void inserir(Database.Entities.login dados)
+        {
             banco.inserir(dados);
             if (dados.nick == string.Empty)
             { throw new Exception("confira seu formulario"); }

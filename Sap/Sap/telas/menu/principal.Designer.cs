@@ -36,6 +36,7 @@
             this.picbackup = new System.Windows.Forms.PictureBox();
             this.picrestore = new System.Windows.Forms.PictureBox();
             this.panelformularios = new System.Windows.Forms.PictureBox();
+            this.lblusuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbarra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picadd)).BeginInit();
@@ -91,7 +92,7 @@
             // 
             this.picbackup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.picbackup.Image = ((System.Drawing.Image)(resources.GetObject("picbackup.Image")));
-            this.picbackup.Location = new System.Drawing.Point(401, 0);
+            this.picbackup.Location = new System.Drawing.Point(455, 0);
             this.picbackup.Name = "picbackup";
             this.picbackup.Size = new System.Drawing.Size(42, 35);
             this.picbackup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +104,7 @@
             // 
             this.picrestore.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.picrestore.Image = ((System.Drawing.Image)(resources.GetObject("picrestore.Image")));
-            this.picrestore.Location = new System.Drawing.Point(353, 0);
+            this.picrestore.Location = new System.Drawing.Point(407, 0);
             this.picrestore.Name = "picrestore";
             this.picrestore.Size = new System.Drawing.Size(42, 35);
             this.picrestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,11 +121,22 @@
             this.panelformularios.TabIndex = 6;
             this.panelformularios.TabStop = false;
             // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblusuario.Location = new System.Drawing.Point(30, 9);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(35, 13);
+            this.lblusuario.TabIndex = 7;
+            this.lblusuario.Text = "label1";
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 399);
+            this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.panelformularios);
             this.Controls.Add(this.picrestore);
             this.Controls.Add(this.picbackup);
@@ -142,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picrestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelformularios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,5 +167,6 @@
         private System.Windows.Forms.PictureBox picbackup;
         private System.Windows.Forms.PictureBox picrestore;
         private System.Windows.Forms.PictureBox panelformularios;
+        private System.Windows.Forms.Label lblusuario;
     }
 }

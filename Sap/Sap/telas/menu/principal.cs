@@ -21,6 +21,7 @@ namespace Sap.telas.menu
         public principal(string nick)
         {
             InitializeComponent();
+           lblusuario.Text=  nick;
         }
 
         private void picadd_Click(object sender, EventArgs e)

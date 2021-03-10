@@ -16,6 +16,8 @@ namespace Sap.Database
 
         }
 
+     
+
         public Entities.usuario buscar(string nick)
         {
             Entities.usuario lista = banco.usuario.FirstOrDefault(t => t.nick == nick);
