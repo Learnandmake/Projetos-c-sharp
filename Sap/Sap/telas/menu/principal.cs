@@ -18,14 +18,14 @@ namespace Sap.telas.menu
             InitializeComponent();
         }
 
-        public principal(string nick )
+        public principal(string nick)
         {
             InitializeComponent();
         }
 
         private void picadd_Click(object sender, EventArgs e)
         {
-            AbrirFormulario < usuario.cadastro>();
+            AbrirFormulario<usuario.cadastro>();
         }
 
         //METODO PARA ABRIR FORMULARIOS DENTRO DEL PANEL
@@ -51,14 +51,14 @@ namespace Sap.telas.menu
             {
                 formulario.BringToFront();
             }
-           
-    }
-       
+
+        }
+
         private void CloseForms(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms["Form1"] == null)
-              picadd.BackColor = Color.FromArgb(4, 41, 68);
-           
+                picadd.BackColor = Color.FromArgb(4, 41, 68);
+
         }
 
         private void picsearch_Click(object sender, EventArgs e)
@@ -88,8 +88,8 @@ namespace Sap.telas.menu
 
                     }
                 }
-    }
-}
+            }
+        }
 
         private void picbackup_Click(object sender, EventArgs e)
         {
@@ -102,7 +102,7 @@ namespace Sap.telas.menu
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
 
-                    using (MySqlBackup back = new MySqlBackup(cmd))
+                    using (MySqlBackup back = new MySqlBackup (cmd))
                     {
                         cmd.Connection = con;
                         con.Open();
@@ -120,3 +120,5 @@ namespace Sap.telas.menu
 
 
         }
+    }
+    }
