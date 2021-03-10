@@ -186,5 +186,27 @@ namespace Sap.telas.usuario
 
             MessageBox.Show("Concluido");
         }
+
+        private void picsendft_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Selecione a Foto da pessoa") == DialogResult.OK)
+            {
+                OpenFileDialog dialogo = new OpenFileDialog();
+
+                dialogo.Filter = "Arquivos De Imagem (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+                if (dialogo.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Foto carregada com sucesso");
+                    string foto = dialogo.FileName.ToString();
+                    txtft.Text = foto;
+                    picft.Image = Image.FromFile(dialogo.FileName);
+                }
+            }
+        }
+
+        private void picreturn_Click(object sender, EventArgs e)
+        {
+            gp1.Visible = false;
+        }
     }
 }
