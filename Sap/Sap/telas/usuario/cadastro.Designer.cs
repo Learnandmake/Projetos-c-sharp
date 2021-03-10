@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro));
             this.lblnome = new System.Windows.Forms.Label();
             this.picsend = new System.Windows.Forms.PictureBox();
             this.picsendft = new System.Windows.Forms.PictureBox();
@@ -72,20 +73,24 @@
             // 
             // picsend
             // 
-            this.picsend.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.picsend.Location = new System.Drawing.Point(176, 230);
+            this.picsend.BackColor = System.Drawing.Color.Transparent;
+            this.picsend.Image = ((System.Drawing.Image)(resources.GetObject("picsend.Image")));
+            this.picsend.Location = new System.Drawing.Point(211, 236);
             this.picsend.Name = "picsend";
-            this.picsend.Size = new System.Drawing.Size(153, 62);
+            this.picsend.Size = new System.Drawing.Size(89, 61);
+            this.picsend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picsend.TabIndex = 2;
             this.picsend.TabStop = false;
             this.picsend.Click += new System.EventHandler(this.picsend_Click);
             // 
             // picsendft
             // 
-            this.picsendft.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.picsendft.Location = new System.Drawing.Point(394, 135);
+            this.picsendft.BackColor = System.Drawing.Color.Transparent;
+            this.picsendft.Image = ((System.Drawing.Image)(resources.GetObject("picsendft.Image")));
+            this.picsendft.Location = new System.Drawing.Point(409, 132);
             this.picsendft.Name = "picsendft";
-            this.picsendft.Size = new System.Drawing.Size(100, 50);
+            this.picsendft.Size = new System.Drawing.Size(76, 50);
+            this.picsendft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picsendft.TabIndex = 5;
             this.picsendft.TabStop = false;
             this.picsendft.Click += new System.EventHandler(this.picsendft_Click);
@@ -127,10 +132,12 @@
             // 
             // picft
             // 
-            this.picft.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.picft.BackColor = System.Drawing.Color.Transparent;
+            this.picft.Image = ((System.Drawing.Image)(resources.GetObject("picft.Image")));
             this.picft.Location = new System.Drawing.Point(382, 10);
             this.picft.Name = "picft";
             this.picft.Size = new System.Drawing.Size(121, 109);
+            this.picft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picft.TabIndex = 22;
             this.picft.TabStop = false;
             // 
