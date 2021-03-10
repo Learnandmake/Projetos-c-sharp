@@ -66,7 +66,7 @@
             this.piclogin.Image = ((System.Drawing.Image)(resources.GetObject("piclogin.Image")));
             this.piclogin.Location = new System.Drawing.Point(63, 64);
             this.piclogin.Name = "piclogin";
-            this.piclogin.Size = new System.Drawing.Size(76, 47);
+            this.piclogin.Size = new System.Drawing.Size(78, 59);
             this.piclogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.piclogin.TabIndex = 3;
             this.piclogin.TabStop = false;
