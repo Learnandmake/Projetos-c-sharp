@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Sap.Functions
 {
     class climatempo
     {
+
         private const string Key = "5a5286b1d1333fa09b4098df90443b4b";
         public static List<string> GetInfoCity(string city)
         {
@@ -19,8 +22,8 @@ namespace Sap.Functions
                 {
                     string url = string.Format("http://api.openweathermap.org/data/2.5/weather?id=524901&appid=5a5286b1d1333fa09b4098df90443b4b");
                     var json = web.DownloadString(url);
-                    var result = JsonConvert.DeserializeObject<ClimaTempoapp.root>(json);
-                    ClimaTempoapp.root outPut = result;
+                    var result = JsonConvert.DeserializeObject<climatempoapp.root>(json);
+                    climatempoapp.root outPut = result;
 
                     infos.Add(outPut.nome);
                     infos.Add(outPut.coord.lon.ToString());
@@ -43,12 +46,11 @@ namespace Sap.Functions
 
             catch (Exception)
             {
-                MessageBox.Show("algo deu errado");
+               
                 infos.Clear();
                 infos.Add("error");
             }
             return infos;
         }
-
     }
 }

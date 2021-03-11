@@ -12,4 +12,5 @@ namespace Sap.Functions
         {
             public string city { get; set; }
         }
+    }
 }
