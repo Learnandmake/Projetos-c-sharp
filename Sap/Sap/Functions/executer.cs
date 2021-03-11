@@ -44,8 +44,13 @@ namespace Sap.Functions
             List<string> infos = climatempo.GetInfoCity(city);
             if (infos[0] == "error")
             { }
-            string message = string.Format("C°:{0}",infos[5]);
-    
+            string  grau =Convert.ToString( infos[5]);
+            string graucortado= grau.Substring(0,2);
+            string message = string.Format("C°:{0}",graucortado);
+           
+
+
+
             return message;
 
 
