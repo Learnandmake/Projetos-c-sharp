@@ -37,6 +37,7 @@
             this.picrestore = new System.Windows.Forms.PictureBox();
             this.panelformularios = new System.Windows.Forms.PictureBox();
             this.lblusuario = new System.Windows.Forms.Label();
+            this.lbltemperatura = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbarra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picadd)).BeginInit();
@@ -131,11 +132,22 @@
             this.lblusuario.TabIndex = 7;
             this.lblusuario.Text = "label1";
             // 
+            // lbltemperatura
+            // 
+            this.lbltemperatura.AutoSize = true;
+            this.lbltemperatura.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbltemperatura.Location = new System.Drawing.Point(295, 9);
+            this.lbltemperatura.Name = "lbltemperatura";
+            this.lbltemperatura.Size = new System.Drawing.Size(35, 13);
+            this.lbltemperatura.TabIndex = 8;
+            this.lbltemperatura.Text = "label1";
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 399);
+            this.Controls.Add(this.lbltemperatura);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.panelformularios);
             this.Controls.Add(this.picrestore);
@@ -168,5 +180,6 @@
         private System.Windows.Forms.PictureBox picrestore;
         private System.Windows.Forms.PictureBox panelformularios;
         private System.Windows.Forms.Label lblusuario;
+        private System.Windows.Forms.Label lbltemperatura;
     }
 }

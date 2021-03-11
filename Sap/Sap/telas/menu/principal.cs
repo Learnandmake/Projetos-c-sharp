@@ -18,10 +18,19 @@ namespace Sap.telas.menu
             InitializeComponent();
         }
 
+        private string city;
+
         public principal(string nick)
         {
             InitializeComponent();
            lblusuario.Text=  nick;
+
+            city = Functions.localization.GetCityname(Functions.executer.GetIp()).ToLower();
+
+            Functions.executer m = new Functions.executer();
+
+            lbltemperatura.Text = m.Getgraus(city);
+
         }
 
         private void picadd_Click(object sender, EventArgs e)

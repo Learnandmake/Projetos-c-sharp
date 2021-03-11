@@ -38,5 +38,17 @@ namespace Sap.Functions
 
 
         }
+
+        public string Getgraus(string city)
+        {
+            List<string> infos = climatempo.GetInfoCity(city);
+            if (infos[0] == "error")
+            { }
+            string message = string.Format("C°:{0}",infos[5]);
+    
+            return message;
+
+
+        }
     }
 }
