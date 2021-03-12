@@ -29,8 +29,8 @@ namespace Sap.telas.menu
 
             Functions.executer m = new Functions.executer();
 
-            lbltemperatura.Text = m.Getgraus(city);
-
+            string graus = m.Getgraus(city);
+            lbltemperatura.Text = graus + " " + "°C";
         }
 
         private void picadd_Click(object sender, EventArgs e)

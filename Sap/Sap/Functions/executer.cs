@@ -46,7 +46,7 @@ namespace Sap.Functions
             { }
             string  grau =Convert.ToString( infos[5]);
             string graucortado= grau.Substring(0,2);
-            string message = string.Format("C°:{0}",graucortado);
+            string message = string.Format(graucortado,"C°:{0}");
            
 
 
