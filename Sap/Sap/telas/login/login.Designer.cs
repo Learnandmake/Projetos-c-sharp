@@ -50,6 +50,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(456, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
@@ -58,9 +60,9 @@
             // 
             // piclogin
             // 
-            this.piclogin.BackColor = System.Drawing.Color.Transparent;
+            this.piclogin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.piclogin.Image = ((System.Drawing.Image)(resources.GetObject("piclogin.Image")));
-            this.piclogin.Location = new System.Drawing.Point(521, 197);
+            this.piclogin.Location = new System.Drawing.Point(540, 185);
             this.piclogin.Name = "piclogin";
             this.piclogin.Size = new System.Drawing.Size(80, 69);
             this.piclogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,6 +72,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(463, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
@@ -78,6 +82,7 @@
             // 
             // picglogin
             // 
+            this.picglogin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.picglogin.Location = new System.Drawing.Point(429, 39);
             this.picglogin.Name = "picglogin";
             this.picglogin.Size = new System.Drawing.Size(255, 273);
@@ -124,9 +129,12 @@
             // 
             // picgif
             // 
+            this.picgif.BackColor = System.Drawing.Color.Transparent;
+            this.picgif.Image = ((System.Drawing.Image)(resources.GetObject("picgif.Image")));
             this.picgif.Location = new System.Drawing.Point(13, 39);
             this.picgif.Name = "picgif";
-            this.picgif.Size = new System.Drawing.Size(388, 273);
+            this.picgif.Size = new System.Drawing.Size(391, 273);
+            this.picgif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picgif.TabIndex = 7;
             this.picgif.TabStop = false;
             // 
@@ -143,6 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(696, 324);
             this.Controls.Add(this.picbarra);
             this.Controls.Add(this.txtsenha);

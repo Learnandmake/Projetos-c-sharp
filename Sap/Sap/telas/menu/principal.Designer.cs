@@ -58,7 +58,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackColor = System.Drawing.Color.Teal;
             this.pictureBox1.Location = new System.Drawing.Point(0, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(83, 365);
@@ -67,7 +67,7 @@
             // 
             // picadd
             // 
-            this.picadd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.picadd.BackColor = System.Drawing.Color.Teal;
             this.picadd.Image = ((System.Drawing.Image)(resources.GetObject("picadd.Image")));
             this.picadd.Location = new System.Drawing.Point(12, 41);
             this.picadd.Name = "picadd";
@@ -79,7 +79,7 @@
             // 
             // picsearch
             // 
-            this.picsearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.picsearch.BackColor = System.Drawing.Color.Teal;
             this.picsearch.Image = ((System.Drawing.Image)(resources.GetObject("picsearch.Image")));
             this.picsearch.Location = new System.Drawing.Point(12, 97);
             this.picsearch.Name = "picsearch";
@@ -115,7 +115,7 @@
             // 
             // panelformularios
             // 
-            this.panelformularios.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelformularios.BackColor = System.Drawing.Color.Teal;
             this.panelformularios.Location = new System.Drawing.Point(80, 35);
             this.panelformularios.Name = "panelformularios";
             this.panelformularios.Size = new System.Drawing.Size(531, 365);
