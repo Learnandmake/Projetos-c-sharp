@@ -49,19 +49,19 @@
             // 
             // picbarra
             // 
-            this.picbarra.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.picbarra.Location = new System.Drawing.Point(0, 0);
+            this.picbarra.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.picbarra.Location = new System.Drawing.Point(-26, 0);
             this.picbarra.Name = "picbarra";
-            this.picbarra.Size = new System.Drawing.Size(611, 35);
+            this.picbarra.Size = new System.Drawing.Size(637, 35);
             this.picbarra.TabIndex = 0;
             this.picbarra.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 368);
+            this.pictureBox1.Size = new System.Drawing.Size(83, 365);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -91,7 +91,7 @@
             // 
             // picbackup
             // 
-            this.picbackup.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.picbackup.BackColor = System.Drawing.Color.LightSeaGreen;
             this.picbackup.Image = ((System.Drawing.Image)(resources.GetObject("picbackup.Image")));
             this.picbackup.Location = new System.Drawing.Point(455, 0);
             this.picbackup.Name = "picbackup";
@@ -103,7 +103,7 @@
             // 
             // picrestore
             // 
-            this.picrestore.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.picrestore.BackColor = System.Drawing.Color.LightSeaGreen;
             this.picrestore.Image = ((System.Drawing.Image)(resources.GetObject("picrestore.Image")));
             this.picrestore.Location = new System.Drawing.Point(407, 0);
             this.picrestore.Name = "picrestore";
@@ -125,7 +125,7 @@
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
-            this.lblusuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblusuario.BackColor = System.Drawing.Color.LightSeaGreen;
             this.lblusuario.Location = new System.Drawing.Point(30, 9);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(35, 13);
@@ -135,7 +135,7 @@
             // lbltemperatura
             // 
             this.lbltemperatura.AutoSize = true;
-            this.lbltemperatura.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbltemperatura.BackColor = System.Drawing.Color.LightSeaGreen;
             this.lbltemperatura.Location = new System.Drawing.Point(295, 9);
             this.lbltemperatura.Name = "lbltemperatura";
             this.lbltemperatura.Size = new System.Drawing.Size(35, 13);
@@ -156,6 +156,8 @@
             this.Controls.Add(this.picadd);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picbarra);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "principal";
             this.Text = "principal";
             ((System.ComponentModel.ISupportInitialize)(this.picbarra)).EndInit();

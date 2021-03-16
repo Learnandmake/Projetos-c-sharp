@@ -47,6 +47,7 @@
             this.picdelete = new System.Windows.Forms.PictureBox();
             this.picalterar = new System.Windows.Forms.PictureBox();
             this.gp1 = new System.Windows.Forms.GroupBox();
+            this.picreturn = new System.Windows.Forms.PictureBox();
             this.cboacesso = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,16 +76,15 @@
             this.picsendft = new System.Windows.Forms.PictureBox();
             this.picsend = new System.Windows.Forms.PictureBox();
             this.lblnome = new System.Windows.Forms.Label();
-            this.picreturn = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbusca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picdelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picalterar)).BeginInit();
             this.gp1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picreturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsendft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsend)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picreturn)).BeginInit();
             this.SuspendLayout();
             // 
             // txtnick
@@ -281,6 +281,18 @@
             this.gp1.TabIndex = 7;
             this.gp1.TabStop = false;
             this.gp1.Visible = false;
+            // 
+            // picreturn
+            // 
+            this.picreturn.BackColor = System.Drawing.Color.Transparent;
+            this.picreturn.Image = ((System.Drawing.Image)(resources.GetObject("picreturn.Image")));
+            this.picreturn.Location = new System.Drawing.Point(6, 11);
+            this.picreturn.Name = "picreturn";
+            this.picreturn.Size = new System.Drawing.Size(30, 28);
+            this.picreturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picreturn.TabIndex = 75;
+            this.picreturn.TabStop = false;
+            this.picreturn.Click += new System.EventHandler(this.picreturn_Click);
             // 
             // cboacesso
             // 
@@ -531,18 +543,6 @@
             this.lblnome.TabIndex = 47;
             this.lblnome.Text = "Nome:";
             // 
-            // picreturn
-            // 
-            this.picreturn.BackColor = System.Drawing.Color.Transparent;
-            this.picreturn.Image = ((System.Drawing.Image)(resources.GetObject("picreturn.Image")));
-            this.picreturn.Location = new System.Drawing.Point(6, 11);
-            this.picreturn.Name = "picreturn";
-            this.picreturn.Size = new System.Drawing.Size(30, 28);
-            this.picreturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picreturn.TabIndex = 75;
-            this.picreturn.TabStop = false;
-            this.picreturn.Click += new System.EventHandler(this.picreturn_Click);
-            // 
             // consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +554,8 @@
             this.Controls.Add(this.dvg);
             this.Controls.Add(this.picbusca);
             this.Controls.Add(this.txtnick);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "consulta";
             this.Text = "consulta";
             ((System.ComponentModel.ISupportInitialize)(this.picbusca)).EndInit();
@@ -562,10 +564,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picalterar)).EndInit();
             this.gp1.ResumeLayout(false);
             this.gp1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picreturn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsendft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsend)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picreturn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

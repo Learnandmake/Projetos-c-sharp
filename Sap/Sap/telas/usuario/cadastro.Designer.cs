@@ -344,6 +344,8 @@
             this.Controls.Add(this.picsendft);
             this.Controls.Add(this.picsend);
             this.Controls.Add(this.lblnome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cadastro";
             this.Text = "cadastro";
             ((System.ComponentModel.ISupportInitialize)(this.picsend)).EndInit();
