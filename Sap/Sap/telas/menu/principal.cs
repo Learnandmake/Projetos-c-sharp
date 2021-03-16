@@ -130,5 +130,15 @@ namespace Sap.telas.menu
 
 
         }
+
+        private void picfechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void picminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
     }

@@ -38,6 +38,8 @@
             this.panelformularios = new System.Windows.Forms.PictureBox();
             this.lblusuario = new System.Windows.Forms.Label();
             this.lbltemperatura = new System.Windows.Forms.Label();
+            this.picminimize = new System.Windows.Forms.PictureBox();
+            this.picfechar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbarra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picadd)).BeginInit();
@@ -45,6 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbackup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picrestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelformularios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picminimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picfechar)).BeginInit();
             this.SuspendLayout();
             // 
             // picbarra
@@ -69,9 +73,9 @@
             // 
             this.picadd.BackColor = System.Drawing.Color.Teal;
             this.picadd.Image = ((System.Drawing.Image)(resources.GetObject("picadd.Image")));
-            this.picadd.Location = new System.Drawing.Point(12, 41);
+            this.picadd.Location = new System.Drawing.Point(10, 42);
             this.picadd.Name = "picadd";
-            this.picadd.Size = new System.Drawing.Size(53, 50);
+            this.picadd.Size = new System.Drawing.Size(62, 62);
             this.picadd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picadd.TabIndex = 2;
             this.picadd.TabStop = false;
@@ -81,9 +85,9 @@
             // 
             this.picsearch.BackColor = System.Drawing.Color.Teal;
             this.picsearch.Image = ((System.Drawing.Image)(resources.GetObject("picsearch.Image")));
-            this.picsearch.Location = new System.Drawing.Point(12, 97);
+            this.picsearch.Location = new System.Drawing.Point(10, 119);
             this.picsearch.Name = "picsearch";
-            this.picsearch.Size = new System.Drawing.Size(53, 50);
+            this.picsearch.Size = new System.Drawing.Size(62, 62);
             this.picsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picsearch.TabIndex = 3;
             this.picsearch.TabStop = false;
@@ -142,11 +146,37 @@
             this.lbltemperatura.TabIndex = 8;
             this.lbltemperatura.Text = "label1";
             // 
+            // picminimize
+            // 
+            this.picminimize.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.picminimize.Image = ((System.Drawing.Image)(resources.GetObject("picminimize.Image")));
+            this.picminimize.Location = new System.Drawing.Point(529, 0);
+            this.picminimize.Name = "picminimize";
+            this.picminimize.Size = new System.Drawing.Size(39, 35);
+            this.picminimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picminimize.TabIndex = 22;
+            this.picminimize.TabStop = false;
+            this.picminimize.Click += new System.EventHandler(this.picminimize_Click);
+            // 
+            // picfechar
+            // 
+            this.picfechar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.picfechar.Image = ((System.Drawing.Image)(resources.GetObject("picfechar.Image")));
+            this.picfechar.Location = new System.Drawing.Point(570, 0);
+            this.picfechar.Name = "picfechar";
+            this.picfechar.Size = new System.Drawing.Size(41, 35);
+            this.picfechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picfechar.TabIndex = 23;
+            this.picfechar.TabStop = false;
+            this.picfechar.Click += new System.EventHandler(this.picfechar_Click);
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 399);
+            this.Controls.Add(this.picfechar);
+            this.Controls.Add(this.picminimize);
             this.Controls.Add(this.lbltemperatura);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.panelformularios);
@@ -167,6 +197,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbackup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picrestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelformularios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picminimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picfechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +215,7 @@
         private System.Windows.Forms.PictureBox panelformularios;
         private System.Windows.Forms.Label lblusuario;
         private System.Windows.Forms.Label lbltemperatura;
+        private System.Windows.Forms.PictureBox picminimize;
+        private System.Windows.Forms.PictureBox picfechar;
     }
 }
