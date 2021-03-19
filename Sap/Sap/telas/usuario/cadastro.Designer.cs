@@ -68,6 +68,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.picsend = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picsendft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picnome)).BeginInit();
@@ -81,13 +82,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picnumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccomplemento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblnome
             // 
             this.lblnome.AutoSize = true;
             this.lblnome.ForeColor = System.Drawing.Color.White;
-            this.lblnome.Location = new System.Drawing.Point(32, 13);
+            this.lblnome.Location = new System.Drawing.Point(30, 14);
             this.lblnome.Name = "lblnome";
             this.lblnome.Size = new System.Drawing.Size(38, 13);
             this.lblnome.TabIndex = 0;
@@ -119,7 +121,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(32, 136);
+            this.label5.Location = new System.Drawing.Point(30, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 13;
@@ -129,7 +131,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(26, 60);
+            this.label6.Location = new System.Drawing.Point(24, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 14;
@@ -158,7 +160,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 105);
+            this.label1.Location = new System.Drawing.Point(2, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 27;
@@ -178,7 +180,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(230, 87);
+            this.label4.Location = new System.Drawing.Point(224, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 33;
@@ -198,7 +200,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(29, 191);
+            this.label10.Location = new System.Drawing.Point(27, 192);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 44;
@@ -208,7 +210,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(25, 159);
+            this.label11.Location = new System.Drawing.Point(23, 160);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 13);
             this.label11.TabIndex = 45;
@@ -217,7 +219,7 @@
             // picnome
             // 
             this.picnome.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.picnome.Location = new System.Drawing.Point(68, 5);
+            this.picnome.Location = new System.Drawing.Point(66, 6);
             this.picnome.Name = "picnome";
             this.picnome.Size = new System.Drawing.Size(111, 36);
             this.picnome.TabIndex = 47;
@@ -228,7 +230,7 @@
             this.txtnome.BackColor = System.Drawing.Color.MediumAquamarine;
             this.txtnome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtnome.ForeColor = System.Drawing.Color.White;
-            this.txtnome.Location = new System.Drawing.Point(76, 17);
+            this.txtnome.Location = new System.Drawing.Point(74, 18);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(100, 13);
             this.txtnome.TabIndex = 48;
@@ -236,7 +238,7 @@
             // picnascimento
             // 
             this.picnascimento.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.picnascimento.Location = new System.Drawing.Point(68, 93);
+            this.picnascimento.Location = new System.Drawing.Point(66, 94);
             this.picnascimento.Name = "picnascimento";
             this.picnascimento.Size = new System.Drawing.Size(111, 36);
             this.picnascimento.TabIndex = 49;
@@ -254,7 +256,7 @@
             // picsenha
             // 
             this.picsenha.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.picsenha.Location = new System.Drawing.Point(68, 184);
+            this.picsenha.Location = new System.Drawing.Point(66, 185);
             this.picsenha.Name = "picsenha";
             this.picsenha.Size = new System.Drawing.Size(111, 36);
             this.picsenha.TabIndex = 51;
@@ -263,7 +265,7 @@
             // picusuario
             // 
             this.picusuario.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.picusuario.Location = new System.Drawing.Point(68, 47);
+            this.picusuario.Location = new System.Drawing.Point(66, 48);
             this.picusuario.Name = "picusuario";
             this.picusuario.Size = new System.Drawing.Size(111, 40);
             this.picusuario.TabIndex = 52;
@@ -278,7 +280,7 @@
             "junior",
             "senior",
             "master"});
-            this.cboacesso.Location = new System.Drawing.Point(68, 159);
+            this.cboacesso.Location = new System.Drawing.Point(66, 160);
             this.cboacesso.Name = "cboacesso";
             this.cboacesso.Size = new System.Drawing.Size(111, 21);
             this.cboacesso.TabIndex = 57;
@@ -288,7 +290,7 @@
             this.txtsenha.BackColor = System.Drawing.Color.MediumAquamarine;
             this.txtsenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtsenha.ForeColor = System.Drawing.Color.White;
-            this.txtsenha.Location = new System.Drawing.Point(76, 194);
+            this.txtsenha.Location = new System.Drawing.Point(74, 195);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.Size = new System.Drawing.Size(100, 13);
             this.txtsenha.TabIndex = 56;
@@ -298,7 +300,7 @@
             this.txtusuario.BackColor = System.Drawing.Color.MediumAquamarine;
             this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtusuario.ForeColor = System.Drawing.Color.White;
-            this.txtusuario.Location = new System.Drawing.Point(76, 60);
+            this.txtusuario.Location = new System.Drawing.Point(74, 61);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(100, 13);
             this.txtusuario.TabIndex = 55;
@@ -312,7 +314,7 @@
             "developer",
             "dba",
             "designer"});
-            this.cbocargo.Location = new System.Drawing.Point(68, 133);
+            this.cbocargo.Location = new System.Drawing.Point(66, 134);
             this.cbocargo.Name = "cbocargo";
             this.cbocargo.Size = new System.Drawing.Size(111, 21);
             this.cbocargo.TabIndex = 54;
@@ -323,7 +325,7 @@
             this.msknascimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.msknascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msknascimento.ForeColor = System.Drawing.Color.White;
-            this.msknascimento.Location = new System.Drawing.Point(83, 101);
+            this.msknascimento.Location = new System.Drawing.Point(81, 102);
             this.msknascimento.Mask = "00/00/0000";
             this.msknascimento.Name = "msknascimento";
             this.msknascimento.Size = new System.Drawing.Size(75, 19);
@@ -476,7 +478,17 @@
             this.picsend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picsend.TabIndex = 76;
             this.picsend.TabStop = false;
-           
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(179, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 77;
+            this.pictureBox1.TabStop = false;
             // 
             // cadastro
             // 
@@ -484,6 +496,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(515, 327);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picsend);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtcomplemento);
@@ -527,6 +540,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cadastro";
             this.Text = "cadastro";
+         
             ((System.ComponentModel.ISupportInitialize)(this.picsendft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picnome)).EndInit();
@@ -540,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picnumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccomplemento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,5 +601,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox picsend;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

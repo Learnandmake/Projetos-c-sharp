@@ -38,12 +38,12 @@ namespace Sap.telas.menu
             AbrirFormulario<usuario.cadastro>();
         }
 
-        //METODO PARA ABRIR FORMULARIOS DENTRO DEL PANEL
+        
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
-            formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
-            //si el formulario/instancia no existe
+            formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();
+          
             if (formulario == null)
             {
                 formulario = new MiForm();
@@ -56,7 +56,7 @@ namespace Sap.telas.menu
                 formulario.BringToFront();
                 formulario.FormClosed += new FormClosedEventHandler(CloseForms);
             }
-            //si el formulario/instancia existe
+          
             else
             {
                 formulario.BringToFront();
