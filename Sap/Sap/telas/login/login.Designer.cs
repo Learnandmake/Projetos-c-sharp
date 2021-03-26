@@ -225,7 +225,7 @@
             // 
             this.picnvi.BackColor = System.Drawing.Color.MediumAquamarine;
             this.picnvi.Image = ((System.Drawing.Image)(resources.GetObject("picnvi.Image")));
-            this.picnvi.Location = new System.Drawing.Point(562, 126);
+            this.picnvi.Location = new System.Drawing.Point(635, 126);
             this.picnvi.Name = "picnvi";
             this.picnvi.Size = new System.Drawing.Size(39, 33);
             this.picnvi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
