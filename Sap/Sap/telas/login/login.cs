@@ -106,5 +106,35 @@ namespace Sap.telas.login
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            label2.Visible = false;
+        }
+
+        private void picglogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picnvi_Click(object sender, EventArgs e)
+        {
+            txtsenha.UseSystemPasswordChar = false;
+            picvi.Visible = true;
+            picnvi.Visible = false;
+        }
+
+        private void picvi_Click(object sender, EventArgs e)
+        {
+            txtsenha.UseSystemPasswordChar = true;
+            picvi.Visible = false;
+            picnvi.Visible = true;
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Sap
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new telas.usuario.cadastro());
+            Application.Run(new telas.login.login());
         }
     }
 }

@@ -130,6 +130,7 @@
             // 
             this.lblusuario.AutoSize = true;
             this.lblusuario.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lblusuario.ForeColor = System.Drawing.Color.White;
             this.lblusuario.Location = new System.Drawing.Point(30, 9);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(35, 13);
@@ -140,6 +141,7 @@
             // 
             this.lbltemperatura.AutoSize = true;
             this.lbltemperatura.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lbltemperatura.ForeColor = System.Drawing.Color.White;
             this.lbltemperatura.Location = new System.Drawing.Point(295, 9);
             this.lbltemperatura.Name = "lbltemperatura";
             this.lbltemperatura.Size = new System.Drawing.Size(35, 13);
