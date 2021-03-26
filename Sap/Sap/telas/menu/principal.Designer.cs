@@ -71,7 +71,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Teal;
             this.pictureBox1.Location = new System.Drawing.Point(0, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 365);
+            this.pictureBox1.Size = new System.Drawing.Size(86, 365);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -79,7 +79,7 @@
             // 
             this.picadd.BackColor = System.Drawing.Color.Teal;
             this.picadd.Image = ((System.Drawing.Image)(resources.GetObject("picadd.Image")));
-            this.picadd.Location = new System.Drawing.Point(10, 42);
+            this.picadd.Location = new System.Drawing.Point(6, 42);
             this.picadd.Name = "picadd";
             this.picadd.Size = new System.Drawing.Size(62, 62);
             this.picadd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,7 +91,7 @@
             // 
             this.picsearch.BackColor = System.Drawing.Color.Teal;
             this.picsearch.Image = ((System.Drawing.Image)(resources.GetObject("picsearch.Image")));
-            this.picsearch.Location = new System.Drawing.Point(10, 119);
+            this.picsearch.Location = new System.Drawing.Point(5, 119);
             this.picsearch.Name = "picsearch";
             this.picsearch.Size = new System.Drawing.Size(62, 62);
             this.picsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -126,9 +126,11 @@
             // panelformularios
             // 
             this.panelformularios.BackColor = System.Drawing.Color.Teal;
+            this.panelformularios.Image = ((System.Drawing.Image)(resources.GetObject("panelformularios.Image")));
             this.panelformularios.Location = new System.Drawing.Point(80, 35);
             this.panelformularios.Name = "panelformularios";
             this.panelformularios.Size = new System.Drawing.Size(531, 365);
+            this.panelformularios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.panelformularios.TabIndex = 6;
             this.panelformularios.TabStop = false;
             // 
@@ -136,10 +138,11 @@
             // 
             this.lblusuario.AutoSize = true;
             this.lblusuario.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(140, 9);
+            this.lblusuario.Location = new System.Drawing.Point(204, 8);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(35, 13);
+            this.lblusuario.Size = new System.Drawing.Size(51, 20);
             this.lblusuario.TabIndex = 7;
             this.lblusuario.Text = "label1";
             // 
@@ -147,10 +150,11 @@
             // 
             this.lbltemperatura.AutoSize = true;
             this.lbltemperatura.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lbltemperatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltemperatura.ForeColor = System.Drawing.Color.White;
-            this.lbltemperatura.Location = new System.Drawing.Point(295, 9);
+            this.lbltemperatura.Location = new System.Drawing.Point(279, 8);
             this.lbltemperatura.Name = "lbltemperatura";
-            this.lbltemperatura.Size = new System.Drawing.Size(35, 13);
+            this.lbltemperatura.Size = new System.Drawing.Size(51, 20);
             this.lbltemperatura.TabIndex = 8;
             this.lbltemperatura.Text = "label1";
             // 
@@ -182,10 +186,11 @@
             // 
             this.lbltime.AutoSize = true;
             this.lbltime.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lbltime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltime.ForeColor = System.Drawing.Color.White;
-            this.lbltime.Location = new System.Drawing.Point(372, 9);
+            this.lbltime.Location = new System.Drawing.Point(362, 8);
             this.lbltime.Name = "lbltime";
-            this.lbltime.Size = new System.Drawing.Size(35, 13);
+            this.lbltime.Size = new System.Drawing.Size(51, 20);
             this.lbltime.TabIndex = 24;
             this.lbltime.Text = "label1";
             // 
@@ -199,20 +204,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(57, 9);
+            this.label1.Location = new System.Drawing.Point(66, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(142, 20);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Seja Bem Vindo ";
+            this.label1.Text = "Seja Bem Vindo(a)";
             // 
             // picfoto
             // 
             this.picfoto.BackColor = System.Drawing.Color.Teal;
             this.picfoto.Image = ((System.Drawing.Image)(resources.GetObject("picfoto.Image")));
-            this.picfoto.Location = new System.Drawing.Point(-1, -1);
+            this.picfoto.Location = new System.Drawing.Point(8, -1);
             this.picfoto.Name = "picfoto";
-            this.picfoto.Size = new System.Drawing.Size(51, 36);
+            this.picfoto.Size = new System.Drawing.Size(48, 36);
             this.picfoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picfoto.TabIndex = 26;
             this.picfoto.TabStop = false;

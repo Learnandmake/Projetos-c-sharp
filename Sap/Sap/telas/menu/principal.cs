@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace Sap.telas.menu
 {
@@ -33,6 +34,16 @@ namespace Sap.telas.menu
 
             string graus = m.Getgraus(city);
             lbltemperatura.Text = graus + " " + "°C";
+
+            Bussines.usuario usuario = new Bussines.usuario();
+
+            Database.Entities.usuario usuariodata = new Database.Entities.usuario();
+
+            usuariodata = usuario.busca(nick);
+
+            byte[] image = ((byte[])(usuariodata.foto));
+            MemoryStream ms = new MemoryStream(image);
+            picfoto.Image = System.Drawing.Image.FromStream(ms);
         }
 
         private void picadd_Click(object sender, EventArgs e)
