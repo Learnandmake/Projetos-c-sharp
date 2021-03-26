@@ -227,6 +227,68 @@ namespace Sap.telas.usuario
         [StructLayout(LayoutKind.Sequential)]
         public struct MARGINS { public int cxLeftWidth; public int cxRightWidth; public int cyTopHeight; public int cyBottomHeight; }
 
-    
+        private void lblnome_Click(object sender, EventArgs e)
+        {
+            lblnome.Visible = false;
+        }
+
+        private void lblusuario_Click(object sender, EventArgs e)
+        {
+            lblusuario.Visible = false;
+        }
+
+        private void lblnascimento_Click(object sender, EventArgs e)
+        {
+            lblnascimento.Visible = false;
+            msknascimento.Visible = true;
+        }
+
+        private void lblcargo_Click(object sender, EventArgs e)
+        {
+            lblcargo.Visible = false;
+        }
+
+        private void lblacesso_Click(object sender, EventArgs e)
+        {
+            lblacesso.Visible = false;
+        }
+
+        private void lblsenha_Click(object sender, EventArgs e)
+        {
+            lblsenha.Visible = false;
+        }
+
+        private void lbltelcelular_Click(object sender, EventArgs e)
+        {
+            lbltelcelular.Visible = false;
+            mskcel.Visible = true;
+        }
+
+        private void lblresidencial_Click(object sender, EventArgs e)
+        {
+            lblresidencial.Visible = false;
+            mskre.Visible = true;
+        }
+
+        private void lblemail_Click(object sender, EventArgs e)
+        {
+            lblemail.Visible = false;
+        }
+
+        private void lblcep_Click(object sender, EventArgs e)
+        {
+            lblcep.Visible = false;
+            mskcep.Visible = true;
+        }
+
+        private void lblnumero_Click(object sender, EventArgs e)
+        {
+            lblnumero.Visible = false;
+        }
+
+        private void lblcomplemento_Click(object sender, EventArgs e)
+        {
+            lblcomplemento.Visible = false;
+        }
     }
 }
