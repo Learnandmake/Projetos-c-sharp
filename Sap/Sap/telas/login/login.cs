@@ -58,6 +58,8 @@ namespace Sap.telas.login
             gp3.AddArc(r3.X, r3.Y + r3.Height - d3, d3, d3, 90, 90);
             picglogin.Region = new Region(gp3);
 
+            txtsenha.UseSystemPasswordChar = true;
+
         }
 
         private void piclogin_Click(object sender, EventArgs e)
@@ -135,6 +137,11 @@ namespace Sap.telas.login
             txtsenha.UseSystemPasswordChar = true;
             picvi.Visible = false;
             picnvi.Visible = true;
+        }
+
+        private void piclogin_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

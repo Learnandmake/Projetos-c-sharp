@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
-            this.piclogin = new System.Windows.Forms.PictureBox();
             this.picglogin = new System.Windows.Forms.PictureBox();
             this.picsenha = new System.Windows.Forms.PictureBox();
             this.picusuario = new System.Windows.Forms.PictureBox();
@@ -45,7 +44,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picvi = new System.Windows.Forms.PictureBox();
             this.picnvi = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.piclogin)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.piclogin = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picglogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picusuario)).BeginInit();
@@ -57,18 +57,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picvi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picnvi)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.piclogin)).BeginInit();
             this.SuspendLayout();
-            // 
-            // piclogin
-            // 
-            this.piclogin.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.piclogin.Image = ((System.Drawing.Image)(resources.GetObject("piclogin.Image")));
-            this.piclogin.Location = new System.Drawing.Point(540, 185);
-            this.piclogin.Name = "piclogin";
-            this.piclogin.Size = new System.Drawing.Size(80, 69);
-            this.piclogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.piclogin.TabIndex = 10;
-            this.piclogin.TabStop = false;
             // 
             // picglogin
             // 
@@ -132,9 +123,9 @@
             // picbarra
             // 
             this.picbarra.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.picbarra.Location = new System.Drawing.Point(0, -2);
+            this.picbarra.Location = new System.Drawing.Point(-3, -2);
             this.picbarra.Name = "picbarra";
-            this.picbarra.Size = new System.Drawing.Size(697, 35);
+            this.picbarra.Size = new System.Drawing.Size(711, 35);
             this.picbarra.TabIndex = 17;
             this.picbarra.TabStop = false;
             // 
@@ -190,7 +181,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(460, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(468, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(46, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -201,7 +192,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.LightSeaGreen;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(460, 126);
+            this.pictureBox2.Location = new System.Drawing.Point(468, 126);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(46, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -212,9 +203,9 @@
             // 
             this.picvi.BackColor = System.Drawing.Color.MediumAquamarine;
             this.picvi.Image = ((System.Drawing.Image)(resources.GetObject("picvi.Image")));
-            this.picvi.Location = new System.Drawing.Point(635, 126);
+            this.picvi.Location = new System.Drawing.Point(635, 134);
             this.picvi.Name = "picvi";
-            this.picvi.Size = new System.Drawing.Size(39, 35);
+            this.picvi.Size = new System.Drawing.Size(28, 23);
             this.picvi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picvi.TabIndex = 25;
             this.picvi.TabStop = false;
@@ -225,13 +216,35 @@
             // 
             this.picnvi.BackColor = System.Drawing.Color.MediumAquamarine;
             this.picnvi.Image = ((System.Drawing.Image)(resources.GetObject("picnvi.Image")));
-            this.picnvi.Location = new System.Drawing.Point(635, 126);
+            this.picnvi.Location = new System.Drawing.Point(635, 135);
             this.picnvi.Name = "picnvi";
-            this.picnvi.Size = new System.Drawing.Size(39, 33);
+            this.picnvi.Size = new System.Drawing.Size(28, 21);
             this.picnvi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picnvi.TabIndex = 26;
             this.picnvi.TabStop = false;
             this.picnvi.Click += new System.EventHandler(this.picnvi_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.groupBox1.Controls.Add(this.piclogin);
+            this.groupBox1.Location = new System.Drawing.Point(504, 180);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(139, 101);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            // 
+            // piclogin
+            // 
+            this.piclogin.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.piclogin.Image = ((System.Drawing.Image)(resources.GetObject("piclogin.Image")));
+            this.piclogin.Location = new System.Drawing.Point(10, 12);
+            this.piclogin.Name = "piclogin";
+            this.piclogin.Size = new System.Drawing.Size(123, 83);
+            this.piclogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.piclogin.TabIndex = 28;
+            this.piclogin.TabStop = false;
+            this.piclogin.Click += new System.EventHandler(this.piclogin_Click_1);
             // 
             // login
             // 
@@ -239,6 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(696, 324);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.picnvi);
             this.Controls.Add(this.picvi);
             this.Controls.Add(this.pictureBox2);
@@ -252,7 +266,6 @@
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.picusuario);
             this.Controls.Add(this.picsenha);
-            this.Controls.Add(this.piclogin);
             this.Controls.Add(this.picgif);
             this.Controls.Add(this.picglogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -260,7 +273,6 @@
             this.Name = "login";
             this.Text = "login";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.login_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.piclogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picglogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picusuario)).EndInit();
@@ -272,13 +284,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picvi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picnvi)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.piclogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox piclogin;
         private System.Windows.Forms.PictureBox picglogin;
         private System.Windows.Forms.PictureBox picsenha;
         private System.Windows.Forms.PictureBox picusuario;
@@ -294,5 +307,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox picvi;
         private System.Windows.Forms.PictureBox picnvi;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox piclogin;
     }
 }
