@@ -141,7 +141,28 @@ namespace Sap.telas.login
 
         private void piclogin_Click_1(object sender, EventArgs e)
         {
+            Bussines.login blogin = new Bussines.login();
+            Functions.criptografia criptografia = new Functions.criptografia();
+
+            string usuario = Convert.ToString(txtusuario.Text);
+            string senha1 = Convert.ToString(txtsenha.Text);
+            string senha = Convert.ToString(criptografia.gerarmd5(senha1));
+
+            int count = blogin.vlogin(usuario, senha);
+
+            if (count != 0)
+            {
+                menu.principal menu = new telas.menu.principal(usuario);
+                menu.Show();
+
+                this.Visible = false;
+
+            }
+
+            else
+            { MessageBox.Show("Erro verifique seu usuário e senha"); }
 
         }
     }
-}
+    }
+

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
 
 namespace Sap.telas.menu
@@ -16,6 +17,7 @@ namespace Sap.telas.menu
         public principal()
         {
             InitializeComponent();
+
         }
 
         private string city;
@@ -139,6 +141,12 @@ namespace Sap.telas.menu
         private void picminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbltime.Text = (DateTime.Now.ToString("HH:mm:ss"));
+
         }
     }
     }
