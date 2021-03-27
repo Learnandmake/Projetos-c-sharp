@@ -146,12 +146,19 @@
     <Compile Include="Functions\climatempo.cs" />
     <Compile Include="Functions\climatempoapp.cs" />
     <Compile Include="Functions\criptografia.cs" />
+    <Compile Include="Functions\enviaremail.cs" />
     <Compile Include="Functions\executer.cs" />
     <Compile Include="Functions\localization.cs" />
     <Compile Include="Functions\localizationapp.cs" />
     <Compile Include="Functions\verificar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="telas\Email\enviar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\Email\enviar.Designer.cs">
+      <DependentUpon>enviar.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\login\login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +192,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="telas\Email\enviar.resx">
+      <DependentUpon>enviar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telas\login\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
