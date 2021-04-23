@@ -39,6 +39,7 @@
             this.txtanexar = new System.Windows.Forms.TextBox();
             this.picenviar = new System.Windows.Forms.PictureBox();
             this.picanexar = new System.Windows.Forms.PictureBox();
+            this.ofd1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picenviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picanexar)).BeginInit();
             this.SuspendLayout();
@@ -130,9 +131,14 @@
             this.picanexar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.picanexar.Location = new System.Drawing.Point(306, 223);
             this.picanexar.Name = "picanexar";
-            this.picanexar.Size = new System.Drawing.Size(53, 20);
+            this.picanexar.Size = new System.Drawing.Size(47, 20);
             this.picanexar.TabIndex = 10;
             this.picanexar.TabStop = false;
+            this.picanexar.Click += new System.EventHandler(this.picanexar_Click);
+            // 
+            // ofd1
+            // 
+            this.ofd1.FileName = "openFileDialog1";
             // 
             // enviar
             // 
@@ -172,5 +178,6 @@
         private System.Windows.Forms.TextBox txtanexar;
         private System.Windows.Forms.PictureBox picenviar;
         private System.Windows.Forms.PictureBox picanexar;
+        private System.Windows.Forms.OpenFileDialog ofd1;
     }
 }
