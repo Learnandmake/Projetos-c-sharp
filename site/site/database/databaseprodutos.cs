@@ -15,7 +15,7 @@ namespace site.database
 
 
             MySqlCommand comand = con.CreateCommand();
-            comand.CommandText = @"insert into login(id_produto,nome,fornecedor,qtd_estoque,qtd_venda,preco,foto,dt_compra)
+            comand.CommandText = @"insert into produtos(id_produto,nome,fornecedor,qtd_estoque,qtd_venda,preco,foto,dt_compra)
                                   values(@id_produto,@nome,@fornecedor,@qtd_estoque,@qtd_venda,@preco,@foto,@dt_compra)";
 
             comand.Parameters.Add(new MySqlParameter("id_produto", produtos.id_produto));

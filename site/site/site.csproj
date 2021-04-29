@@ -258,6 +258,7 @@
     <Compile Include="database\databasecliente.cs" />
     <Compile Include="database\databaselogin.cs" />
     <Compile Include="database\databaseprodutos.cs" />
+    <Compile Include="database\databasevenda.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
