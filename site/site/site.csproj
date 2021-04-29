@@ -254,7 +254,10 @@
     <Compile Include="Controllers\AnimeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="database\databaseadministrador.cs" />
     <Compile Include="database\databasecliente.cs" />
+    <Compile Include="database\databaselogin.cs" />
+    <Compile Include="database\databaseprodutos.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
