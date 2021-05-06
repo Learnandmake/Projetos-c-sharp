@@ -10,7 +10,7 @@ namespace site.database
     {
         public void inserir(model.venda venda)
         {
-            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;user=root;pwd=1234");
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=1234");
             con.Open();
 
 
@@ -25,4 +25,5 @@ namespace site.database
             comand.ExecuteNonQuery();
             con.Close();
         }
+    }
 }
