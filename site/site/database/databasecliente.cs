@@ -47,9 +47,15 @@ namespace site.database
                 model.nome = Convert.ToString(reader["nome"]);
                 model.nascimento = Convert.ToDateTime(reader["dt_nascimento"]);
                 model.sexo = Convert.ToString(reader["sexo"]);
-                model.foto = Convert.ToByte[](reader["foto"]);
+                model.foto = Convert.ToByte(reader["foto"]);
                 model.registro = Convert.ToDateTime(reader["registro"]);
+
+                lista.Add(model);
+               
             }
+
+            con.Close();
+            return lista;
 
         }
 

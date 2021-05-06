@@ -25,5 +25,34 @@ namespace site.database
             con.Close();
 
         }
+        public List<model.administrador> lista()
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"select * from administrador";
+
+            MySqlDataReader reader = comand.ExecuteReader();
+
+            List<model.administrador> lista = new List<model.administrador>();
+            while (reader.Read())
+            {
+                model.administrador model = new model.administrador();
+                model.id_adm = Convert.ToString(reader["id_adm"]);
+                model.nome = Convert.ToString(reader["nome"]);
+                model.departamento = Convert.ToString(reader["departamento"]);
+                model.registro = Convert.ToDateTime(reader["registro"]);
+     
+
+
+                lista.Add(model);
+
+            }
+
+            con.Close();
+            return lista;
+
+        }
     }
 }

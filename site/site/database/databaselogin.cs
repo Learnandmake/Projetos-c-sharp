@@ -29,5 +29,36 @@ namespace site.database
 
 
         }
+
+        public List<model.login> lista()
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"select * from login";
+
+            MySqlDataReader reader = comand.ExecuteReader();
+
+            List<model.login> lista = new List<model.login>();
+            while (reader.Read())
+            {
+                model.login model = new site.model.login();
+                model.id_pessoal = Convert.ToString(reader["id_pessoal"]);
+                model.id_login = Convert.ToInt32(reader["id_login"]);
+                model.id_adm = Convert.ToString(reader["id_adm"]);
+                model.senha = Convert.ToString(reader["senha"]);
+                model.acesso =  Convert.ToString(reader["acesso"]);
+               
+
+                lista.Add(model);
+
+            }
+
+            con.Close();
+            return lista;
+
+        }
+
     }
 }
