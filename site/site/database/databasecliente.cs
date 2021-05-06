@@ -9,7 +9,7 @@ namespace site.database
     {
         public void inserir(model.cliente cliente)
         {
-            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=1234");
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
             con.Open();
 
             MySqlCommand comand = con.CreateCommand();
@@ -29,7 +29,29 @@ namespace site.database
 
         }
 
+        public List<model.cliente> lista ()
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
 
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"select * from cliente";
+
+            MySqlDataReader reader = comand.ExecuteReader();
+
+            List<model.cliente> lista = new List<model.cliente>();
+            while(reader.Read())
+            {
+                model.cliente model = new site.model.cliente();
+                model.id_pessoal = Convert.ToString(reader["id_pessoal"]);
+                model.nome = Convert.ToString(reader["nome"]);
+                model.nascimento = Convert.ToDateTime(reader["dt_nascimento"]);
+                model.sexo = Convert.ToString(reader["sexo"]);
+                model.foto = Convert.ToByte[](reader["foto"]);
+                model.registro = Convert.ToDateTime(reader["registro"]);
+            }
+
+        }
 
           }
 }

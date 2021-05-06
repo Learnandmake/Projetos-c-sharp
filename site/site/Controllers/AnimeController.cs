@@ -17,6 +17,8 @@ namespace site.Controllers
        [HttpPost]
         public ActionResult inserir(model.venda model)
         {
+       business.vendasbusiness bvenda = new business.vendasbusiness();
+            bvenda.inserir(model);
             return View();
         }
         public ActionResult inserir()

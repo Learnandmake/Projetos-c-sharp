@@ -28,11 +28,11 @@ namespace site.database
 
         public List <model.venda> listar ()
         {
-            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=1234");
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
             con.Open();
 
             MySqlCommand comand = con.CreateCommand();
-            comand.CommandText = @"select * from vendas";
+            comand.CommandText = @"select * from venda";
 
             MySqlDataReader reader = comand.ExecuteReader();
 
