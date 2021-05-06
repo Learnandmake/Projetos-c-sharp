@@ -8,7 +8,7 @@ namespace site.database
     public class databaselogin
     { public void inserir (model.login login)
         {
-            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=1234");
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
             con.Open();
 
 

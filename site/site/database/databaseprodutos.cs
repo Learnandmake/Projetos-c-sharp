@@ -10,7 +10,7 @@ namespace site.database
     {
         public void inserir(model.produto produtos)
         {
-            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=1234");
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
             con.Open();
 
 
