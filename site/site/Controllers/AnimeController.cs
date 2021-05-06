@@ -13,5 +13,22 @@ namespace site.Controllers
         {
             return View();
         }
+
+       [HttpPost]
+        public ActionResult inserir(model.venda model)
+        {
+            return View();
+        }
+        public ActionResult inserir()
+        {
+            return View();
+        }
+        public ActionResult lista()
+        {
+            business.vendasbusiness bvendas = new business.vendasbusiness();
+           List<model.venda> lista= bvendas.listar();
+           
+            return View(lista);
+        }
     }
 }

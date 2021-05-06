@@ -25,5 +25,35 @@ namespace site.database
             comand.ExecuteNonQuery();
             con.Close();
         }
+
+        public List <model.venda> listar ()
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=1234");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"select * from vendas";
+
+            MySqlDataReader reader = comand.ExecuteReader();
+
+            List<model.venda> lista = new List<model.venda>();
+            while(reader.Read())
+            {
+                model.venda model = new site.model.venda();
+                model.id_pessoal = Convert.ToString(reader["id_pessoal"]);
+                model.id_produto = Convert.ToInt32( reader["id_produto"]);
+                model.id_venda = Convert.ToInt32( reader["id_venda"]);
+                model.registro = Convert.ToDateTime(reader["registro"]);
+
+                lista.Add(model);
+            }
+            con.Close();
+
+            return lista;
+
+
+
+
+        }
     }
 }
