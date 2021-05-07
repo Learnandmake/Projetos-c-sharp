@@ -99,7 +99,7 @@ namespace site.database
             MySqlCommand comand = con.CreateCommand();
             comand.CommandText = @"select acesso from login where id_pessoal = @id_pessoal and senha = @senha ";
 
-            comand.Parameters.Add(new MySqlParameter("id", id_pessoal));
+            comand.Parameters.Add(new MySqlParameter("id_pessoal", id_pessoal));
             comand.Parameters.Add(new MySqlParameter("senha", senha));
 
             MySqlDataReader reader = comand.ExecuteReader();
@@ -120,6 +120,77 @@ namespace site.database
             return lista;
 
         }
+        
+        public void alteraradm (model.login login)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
 
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"update login 
+                                   set id_adm = @id_adm,
+                                       senha= @senha,
+                                       acesso=@acesso
+                                        where id_adm = @id_adm";
+
+            comand.Parameters.Add(new MySqlParameter ("id_adm", login.id_adm));
+            comand.Parameters.Add(new MySqlParameter ("senha", login.senha));
+            comand.Parameters.Add(new MySqlParameter ("acesso", login.acesso));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+
+        }
+     
+           public void alterarcliente(model.login login)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"update login 
+                                   set id_pessoal = @id_pessoal,
+                                       senha= @senha,
+                                       acesso=@acesso
+                                        where id_pessoal = @id_pessoa";
+
+            comand.Parameters.Add(new MySqlParameter("id_pessoal", login.id_pessoal));
+            comand.Parameters.Add(new MySqlParameter("senha", login.senha));
+            comand.Parameters.Add(new MySqlParameter("acesso", login.acesso));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        public void removeradm (string id_adm )
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"delete from login 
+                                 where=@id_adm";
+            comand.Parameters.Add(new MySqlParameter("id_adm", id_adm));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void removercliente ( string id_pessoal)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"delete from login 
+                                 where=@id_pessoal";
+
+            comand.Parameters.Add(new MySqlParameter("id_pessoal", id_pessoal));
+        
+            comand.ExecuteNonQuery();
+            con.Close();
+
+        }
     }
 }
