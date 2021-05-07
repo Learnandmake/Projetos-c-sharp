@@ -341,8 +341,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Anime\Home.cshtml" />
-    <Content Include="Views\Anime\inserir.cshtml" />
-    <Content Include="Views\Anime\lista.cshtml" />
+    <Content Include="Views\Anime\clientecadastro.cshtml" />
+    <Content Include="Views\Anime\produtocadastro.cshtml" />
+    <Content Include="Views\Anime\vendacadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -78,6 +78,10 @@ namespace site.database
             comand.CommandText = @"update administrador
                                    set id_adm = @id_adm,
                                    nome = @nome,
+                                   idade = @idade,
+                                    sexo = @sexo,
+                                    dt_nascimento = @dt_nascimento,
+                                    foto = @foto,
                                    departamento = @departamento,
                                    registro = @registro
                                     
@@ -85,6 +89,10 @@ namespace site.database
 
             comand.Parameters.Add(new MySqlParameter("id_adm", administrador.id_adm));
             comand.Parameters.Add(new MySqlParameter("nome", administrador.nome));
+            comand.Parameters.Add(new MySqlParameter("idade", administrador.idade));
+            comand.Parameters.Add(new MySqlParameter("sexo", administrador.sexo));
+            comand.Parameters.Add(new MySqlParameter("dt_nascimento", administrador.nascimento));
+            comand.Parameters.Add(new MySqlParameter("foto", administrador.foto));
             comand.Parameters.Add(new MySqlParameter("departamento", administrador.departamento));
             comand.Parameters.Add(new MySqlParameter("registro", administrador.registro));
 
