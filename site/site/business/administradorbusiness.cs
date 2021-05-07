@@ -21,6 +21,11 @@ namespace site.business
 
         }
 
+        public void delete (string id_adm)
+        {
+            banco.removeradm(id_adm);
+
+        }
 
     }
 }

@@ -50,10 +50,20 @@ namespace site.database
             con.Close();
 
             return lista;
+        }
+      
+          public void removervenda(int id_venda)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
 
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"delete from venda
+                                 where=@id_venda";
+            comand.Parameters.Add(new MySqlParameter("id_venda", id_venda));
 
-
-
+            comand.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

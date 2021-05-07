@@ -54,5 +54,19 @@ namespace site.database
             return lista;
 
         }
+
+        public void removeradm(string id_adm)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"delete from administrador
+                                 where=@id_adm";
+            comand.Parameters.Add(new MySqlParameter("id_adm", id_adm));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

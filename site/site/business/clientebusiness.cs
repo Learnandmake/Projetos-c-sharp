@@ -21,6 +21,12 @@ namespace site.business
 
         }
 
+        public void delete (string cliente)
+        {
+            banco.removercliente(cliente);
+
+        }
+
 
     }
 }

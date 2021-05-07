@@ -21,6 +21,11 @@ namespace site.business
 
         }
 
+        public void removerproduto(int id)
+        {
+            banco.removerproduto(id);
+
+        }
 
     }
 }

@@ -15,7 +15,7 @@ namespace site.database
 
 
             MySqlCommand comand = con.CreateCommand();
-            comand.CommandText = @"insert into produtos(id_produto,nome,fornecedor,qtd_estoque,qtd_venda,preco,foto,dt_compra)
+            comand.CommandText = @"insert into produto(id_produto,nome,fornecedor,qtd_estoque,qtd_venda,preco,foto,dt_compra)
                                   values(@id_produto,@nome,@fornecedor,@qtd_estoque,@qtd_venda,@preco,@foto,@dt_compra)";
 
             comand.Parameters.Add(new MySqlParameter("id_produto", produtos.id_produto));
@@ -39,7 +39,7 @@ namespace site.database
             con.Open();
 
             MySqlCommand comand = con.CreateCommand();
-            comand.CommandText = @"select * from produtos";
+            comand.CommandText = @"select * from produto";
 
             MySqlDataReader reader = comand.ExecuteReader();
 
@@ -64,5 +64,51 @@ namespace site.database
 
         }
 
+        public void alterarproduto(model.produto produto)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"update produto
+                                   set id_produto = @id_produto,
+                                   fornecedor = @fornecedor,
+                                  qtd_estoque = @qtd_estoque,
+                                    qtd_venda = @qtd_venda,
+                                    preco = @preco,
+                                    foto = @foto,
+                                    dt_compra = @dt_compra
+                                    
+                                    where nome = @nome";
+
+            comand.Parameters.Add(new MySqlParameter("id_produto", produto.id_produto));
+            comand.Parameters.Add(new MySqlParameter("senha", produto.fornecedor));
+            comand.Parameters.Add(new MySqlParameter("acesso",produto.qtd_estoque));
+            comand.Parameters.Add(new MySqlParameter("acesso", produto.qtd_venda));
+            comand.Parameters.Add(new MySqlParameter("acesso", produto.preco));
+            comand.Parameters.Add(new MySqlParameter("acesso", produto.foto));
+            comand.Parameters.Add(new MySqlParameter("acesso", produto.dt_compra));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        public void removerproduto (int id)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"delete from produto
+                                 where=@id_produto";
+            comand.Parameters.Add(new MySqlParameter("id_produto", id));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+       
     }
 }

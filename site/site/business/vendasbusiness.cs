@@ -20,7 +20,12 @@ namespace site.business
             return lista;
 
     }
-    
-    
+
+        public void removervenda (int id_venda)
+        {
+            banco.removervenda(id_venda);
+
+        }
+
     }
 }

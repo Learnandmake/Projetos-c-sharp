@@ -20,6 +20,17 @@ namespace site.business
             return lista;
 
         }
+        public void removeradm(string adm)
+        {
+            banco.removeradm(adm);
+
+        }
+
+        public void removercliente (string cliente)
+        {
+            banco.removercliente(cliente);
+
+        }
 
 
     }
