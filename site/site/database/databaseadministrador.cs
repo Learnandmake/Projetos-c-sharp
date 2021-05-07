@@ -13,11 +13,15 @@ namespace site.database
 
 
             MySqlCommand comand = con.CreateCommand();
-            comand.CommandText = @"insert into administrador(id_adm,nome,departamento,registro)
-                                  values(@id_adm,@nome,@departamento,@registro)";
+            comand.CommandText = @"insert into administrador(id_adm,nome,idade,sexo,dt_nascimento,foto,departamento,registro)
+                                  values(@id_adm,@nome,@idade,@sexo,@dt_nascimento,@foto,@departamento,@registro)";
 
             comand.Parameters.Add(new MySqlParameter("id_adm", adm.id_adm));
             comand.Parameters.Add(new MySqlParameter("nome", adm.nome));
+            comand.Parameters.Add(new MySqlParameter("idade", adm.idade));
+            comand.Parameters.Add(new MySqlParameter("sexo", adm.sexo));
+            comand.Parameters.Add(new MySqlParameter("dt_nascimento", adm.nascimento));
+            comand.Parameters.Add(new MySqlParameter("foto", adm.foto));
             comand.Parameters.Add(new MySqlParameter("departamento", adm.departamento));   
             comand.Parameters.Add(new MySqlParameter("registro", adm.registro));
 
@@ -41,6 +45,9 @@ namespace site.database
                 model.administrador model = new model.administrador();
                 model.id_adm = Convert.ToString(reader["id_adm"]);
                 model.nome = Convert.ToString(reader["nome"]);
+                model.nome = Convert.ToString(reader["idade"]);
+                model.nome = Convert.ToString(reader["sexo"]);
+                model.nome = Convert.ToString(reader["foto"]);
                 model.departamento = Convert.ToString(reader["departamento"]);
                 model.registro = Convert.ToDateTime(reader["registro"]);
      

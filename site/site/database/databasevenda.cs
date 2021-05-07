@@ -16,7 +16,7 @@ namespace site.database
 
             MySqlCommand comand = con.CreateCommand();
             comand.CommandText = @"insert into venda(id_venda,id_pessoal,id_produto,registro)
-                                  values(@id_produto,@id_venda,@id_pessoal,@id_produto,@registro)";
+                                  values(@id_venda,@id_pessoal,@id_produto,@registro)";
 
             comand.Parameters.Add(new MySqlParameter("id_venda", venda.id_venda));
             comand.Parameters.Add(new MySqlParameter("id_pessoal", venda.id_pessoal));
