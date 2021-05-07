@@ -32,6 +32,37 @@ namespace site.database
 
 
         }
-      
+
+        public List<model.produto> lista()
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"select * from produtos";
+
+            MySqlDataReader reader = comand.ExecuteReader();
+
+            List<model.produto> lista = new List<model.produto> ();
+            while (reader.Read())
+            {
+                model.produto  model = new site.model.produto ();
+                model.id_produto = Convert.ToInt32(reader["id_produto"]);
+                model.fornecedor = Convert.ToString(reader["fornecedor"]);
+                model.qtd_estoque = Convert.ToInt32(reader["qtd_estoque"]);
+                model.qtd_venda = Convert.ToInt32(reader["qtd_venda"]);
+                model.preco = Convert.ToDecimal(reader["preco"]);
+                model.foto = Convert.ToByte(reader["foto"]);
+                model.dt_compra = Convert.ToDateTime(reader["dt_compra"]);
+
+                lista.Add(model);
+
+            }
+
+            con.Close();
+            return lista;
+
+        }
+
     }
 }

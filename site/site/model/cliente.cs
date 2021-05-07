@@ -11,7 +11,7 @@ namespace site.model
       public int idade { get; set; }
       public string sexo { get; set; }
       public DateTime nascimento { get; set; }
-      public byte[] foto { get; set; }
+      public byte foto { get; set; }
       public DateTime registro { get; set; }
 
       }

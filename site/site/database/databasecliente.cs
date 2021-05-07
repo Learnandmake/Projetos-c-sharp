@@ -25,7 +25,7 @@ namespace site.database
             comand.Parameters.Add(new MySqlParameter("registro", cliente.registro));
 
             comand.ExecuteNonQuery();
-            con.Close();
+            con.Close(); 
 
         }
 
