@@ -290,5 +290,10 @@ namespace Sap.telas.usuario
         {
             lblcomplemento.Visible = false;
         }
+
+        private void picsend_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

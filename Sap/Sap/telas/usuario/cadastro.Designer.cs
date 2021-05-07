@@ -386,6 +386,7 @@
             this.picsend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picsend.TabIndex = 76;
             this.picsend.TabStop = false;
+            this.picsend.Click += new System.EventHandler(this.picsend_Click_1);
             // 
             // pictureBox1
             // 

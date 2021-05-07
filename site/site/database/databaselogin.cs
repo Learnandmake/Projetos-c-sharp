@@ -60,5 +60,66 @@ namespace site.database
 
         }
 
+
+        public List<model.login> loginadm(string id_adm, string senha)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"select * from login where id_adm = @id_adm and senha = @senha ";
+
+            comand.Parameters.Add(new MySqlParameter("id_adm", id_adm));
+            comand.Parameters.Add(new MySqlParameter("senha", senha));
+
+            MySqlDataReader reader = comand.ExecuteReader();
+
+            List<model.login> lista = new List<model.login>();
+            while (reader.Read())
+            {
+                model.login model = new site.model.login();
+
+                model.acesso = Convert.ToString(reader["acesso"]);
+
+
+                lista.Add(model);
+
+            }
+
+            con.Close();
+            return lista;
+
+        }
+
+        public List<model.login> logincliente(string id_pessoal, string senha)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"select acesso from login where id_pessoal = @id_pessoal and senha = @senha ";
+
+            comand.Parameters.Add(new MySqlParameter("id", id_pessoal));
+            comand.Parameters.Add(new MySqlParameter("senha", senha));
+
+            MySqlDataReader reader = comand.ExecuteReader();
+
+            List<model.login> lista = new List<model.login>();
+            while (reader.Read())
+            {
+                model.login model = new site.model.login();
+               
+                model.acesso = Convert.ToString(reader["acesso"]);
+
+
+                lista.Add(model);
+
+            }
+
+            con.Close();
+            return lista;
+
+        }
+
     }
 }
