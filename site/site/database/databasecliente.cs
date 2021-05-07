@@ -73,5 +73,34 @@ namespace site.database
             con.Close();
         }
 
+        public void alterarcliente(model.cliente cliente)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"update cliente
+                                   set id_pessoal = @id_pessoal,
+                                   nome = @nome,
+                                   idade = @idade,
+                                    sexo = @sexo,
+                                    dt_nascimento = @dt_nascimento,
+                                    foto = @foto,
+                                    registro = @registro
+                                    
+                                    where id_pessoal = @id_pessoal";
+                                    
+            comand.Parameters.Add(new MySqlParameter("id_pessoal", cliente.id_pessoal));
+            comand.Parameters.Add(new MySqlParameter("nome", cliente.nome));
+            comand.Parameters.Add(new MySqlParameter("idade", cliente.idade));
+            comand.Parameters.Add(new MySqlParameter("sexo", cliente.sexo));
+            comand.Parameters.Add(new MySqlParameter("dt_nascimento", cliente.nascimento));
+            comand.Parameters.Add(new MySqlParameter("foto", cliente.foto));
+            comand.Parameters.Add(new MySqlParameter("registro", cliente.registro));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+
+        }
     }
 }

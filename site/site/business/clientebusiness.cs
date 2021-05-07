@@ -27,6 +27,10 @@ namespace site.business
 
         }
 
+        public void alterar(model.cliente cliente)
+        {
+            banco.alterarcliente(cliente);
 
+        }
     }
 }

@@ -65,5 +65,28 @@ namespace site.database
             comand.ExecuteNonQuery();
             con.Close();
         }
+
+
+        public void alterar(model.venda venda)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"update venda
+                                         set id_venda = @id_venda,
+                                         id_pessoal = @id_pessoal,
+                                         id_produto = @id_produto
+                                         registro = @registro
+                                         where id_venda = @id_venda";
+
+            comand.Parameters.Add(new MySqlParameter("id_venda", venda.id_venda));
+            comand.Parameters.Add(new MySqlParameter("id_pessoal", venda.id_pessoal));
+            comand.Parameters.Add(new MySqlParameter("id_produto", venda.id_produto));
+            comand.Parameters.Add(new MySqlParameter("registro", venda.registro));
+            comand.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

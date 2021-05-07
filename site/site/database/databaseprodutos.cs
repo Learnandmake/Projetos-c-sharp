@@ -79,15 +79,15 @@ namespace site.database
                                     foto = @foto,
                                     dt_compra = @dt_compra
                                     
-                                    where nome = @nome";
+                                    where id_produto = @id_produto";
 
             comand.Parameters.Add(new MySqlParameter("id_produto", produto.id_produto));
-            comand.Parameters.Add(new MySqlParameter("senha", produto.fornecedor));
-            comand.Parameters.Add(new MySqlParameter("acesso",produto.qtd_estoque));
-            comand.Parameters.Add(new MySqlParameter("acesso", produto.qtd_venda));
-            comand.Parameters.Add(new MySqlParameter("acesso", produto.preco));
-            comand.Parameters.Add(new MySqlParameter("acesso", produto.foto));
-            comand.Parameters.Add(new MySqlParameter("acesso", produto.dt_compra));
+            comand.Parameters.Add(new MySqlParameter("fornecedor", produto.fornecedor));
+            comand.Parameters.Add(new MySqlParameter("qtd_estoque",produto.qtd_estoque));
+            comand.Parameters.Add(new MySqlParameter("qtd_venda", produto.qtd_venda));
+            comand.Parameters.Add(new MySqlParameter("preco", produto.preco));
+            comand.Parameters.Add(new MySqlParameter("foto", produto.foto));
+            comand.Parameters.Add(new MySqlParameter("dt_compra", produto.dt_compra));
 
             comand.ExecuteNonQuery();
             con.Close();

@@ -32,6 +32,17 @@ namespace site.business
 
         }
 
+        public void alteraradm(model.login login)
+        {
+            banco.alterarladm(login);
 
+        }
+
+
+        public void alterarcliente(model.login login)
+        {
+            banco.alterarlcliente(login);
+
+        }
     }
 }

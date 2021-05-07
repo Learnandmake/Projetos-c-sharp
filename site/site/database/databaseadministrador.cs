@@ -55,7 +55,7 @@ namespace site.database
 
         }
 
-        public void removeradm(string id_adm)
+        public void remover(string id_adm)
         {
             MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
             con.Open();
@@ -67,6 +67,30 @@ namespace site.database
 
             comand.ExecuteNonQuery();
             con.Close();
+        }
+
+        public void alterar(model.administrador administrador)
+        {
+            MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
+            con.Open();
+
+            MySqlCommand comand = con.CreateCommand();
+            comand.CommandText = @"update administrador
+                                   set id_adm = @id_adm,
+                                   nome = @nome,
+                                   departamento = @departamento,
+                                   registro = @registro
+                                    
+                                    where id_adm = @id_adm";
+
+            comand.Parameters.Add(new MySqlParameter("id_adm", administrador.id_adm));
+            comand.Parameters.Add(new MySqlParameter("nome", administrador.nome));
+            comand.Parameters.Add(new MySqlParameter("departamento", administrador.departamento));
+            comand.Parameters.Add(new MySqlParameter("registro", administrador.registro));
+
+            comand.ExecuteNonQuery();
+            con.Close();
+
         }
     }
 }

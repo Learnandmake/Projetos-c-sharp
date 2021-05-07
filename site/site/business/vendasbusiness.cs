@@ -27,5 +27,11 @@ namespace site.business
 
         }
 
+
+        public void alteraradm(model.venda venda)
+        {
+            banco.alterar(venda);
+
+        }
     }
 }

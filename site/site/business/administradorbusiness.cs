@@ -23,9 +23,14 @@ namespace site.business
 
         public void delete (string id_adm)
         {
-            banco.removeradm(id_adm);
+            banco.remover(id_adm);
 
         }
 
+        public void alterar(model.administrador adm)
+        {
+            banco.alterar(adm);
+
+        }
     }
 }

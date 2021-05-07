@@ -121,7 +121,7 @@ namespace site.database
 
         }
         
-        public void alteraradm (model.login login)
+        public void alterarladm (model.login login)
         {
             MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
             con.Open();
@@ -142,7 +142,7 @@ namespace site.database
 
         }
      
-           public void alterarcliente(model.login login)
+           public void alterarlcliente(model.login login)
         {
             MySqlConnection con = new MySqlConnection("server=LocalHost;database=site;uid=root;pwd=");
             con.Open();

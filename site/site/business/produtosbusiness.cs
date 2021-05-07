@@ -27,5 +27,12 @@ namespace site.business
 
         }
 
+
+        public void alterar(model.produto produto)
+        {
+            banco.alterarproduto(produto);
+
+        }
+
     }
 }
