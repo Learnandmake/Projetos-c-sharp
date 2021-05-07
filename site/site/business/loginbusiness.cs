@@ -7,5 +7,20 @@ namespace site.business
 {
     public class loginbusiness
     {
+        database.databaselogin banco = new database.databaselogin();
+        public void inserir(model.login login)
+        {
+            banco.inserir(login);
+
+        }
+
+        public List<model.login> lista()
+        {
+            List<model.login> lista = banco.lista();
+            return lista;
+
+        }
+
+
     }
 }

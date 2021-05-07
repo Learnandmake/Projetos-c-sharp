@@ -7,5 +7,20 @@ namespace site.business
 {
     public class administradorbusiness
     {
+        database.databaseadministrador banco = new database.databaseadministrador();
+        public void inserir(model.administrador adm)
+        {
+            banco.inserir(adm);
+
+        }
+
+        public List<model.administrador> listar()
+        {
+            List<model.administrador> lista = banco.lista();
+            return lista;
+
+        }
+
+
     }
 }
