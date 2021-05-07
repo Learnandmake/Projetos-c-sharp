@@ -250,6 +250,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="business\administradorbusiness.cs" />
+    <Compile Include="business\clientebusiness.cs" />
+    <Compile Include="business\loginbusiness.cs" />
+    <Compile Include="business\produtosbusiness.cs" />
     <Compile Include="business\vendasbusiness.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnimeController.cs" />
