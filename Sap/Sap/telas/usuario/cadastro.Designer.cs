@@ -234,13 +234,14 @@
             this.cbocargo.ForeColor = System.Drawing.Color.Black;
             this.cbocargo.FormattingEnabled = true;
             this.cbocargo.Items.AddRange(new object[] {
-            "developer",
-            "dba",
-            "designer"});
+            "financeiro",
+            "logistica",
+            "rh"});
             this.cbocargo.Location = new System.Drawing.Point(66, 134);
             this.cbocargo.Name = "cbocargo";
             this.cbocargo.Size = new System.Drawing.Size(111, 21);
             this.cbocargo.TabIndex = 54;
+            this.cbocargo.SelectedIndexChanged += new System.EventHandler(this.cbocargo_SelectedIndexChanged);
             // 
             // msknascimento
             // 
@@ -513,11 +514,11 @@
             this.lblcargo.AutoSize = true;
             this.lblcargo.BackColor = System.Drawing.Color.White;
             this.lblcargo.ForeColor = System.Drawing.Color.Black;
-            this.lblcargo.Location = new System.Drawing.Point(78, 140);
+            this.lblcargo.Location = new System.Drawing.Point(71, 137);
             this.lblcargo.Name = "lblcargo";
-            this.lblcargo.Size = new System.Drawing.Size(35, 13);
+            this.lblcargo.Size = new System.Drawing.Size(74, 13);
             this.lblcargo.TabIndex = 87;
-            this.lblcargo.Text = "Cargo";
+            this.lblcargo.Text = "Departamento";
             this.lblcargo.Click += new System.EventHandler(this.lblcargo_Click);
             // 
             // lblacesso
@@ -525,7 +526,7 @@
             this.lblacesso.AutoSize = true;
             this.lblacesso.BackColor = System.Drawing.Color.White;
             this.lblacesso.ForeColor = System.Drawing.Color.Black;
-            this.lblacesso.Location = new System.Drawing.Point(78, 164);
+            this.lblacesso.Location = new System.Drawing.Point(71, 163);
             this.lblacesso.Name = "lblacesso";
             this.lblacesso.Size = new System.Drawing.Size(42, 13);
             this.lblacesso.TabIndex = 88;

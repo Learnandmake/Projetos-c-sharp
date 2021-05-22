@@ -143,11 +143,13 @@ namespace Sap.telas.login
         {
             Bussines.login blogin = new Bussines.login();
             Functions.criptografia criptografia = new Functions.criptografia();
+            
+           
 
             string usuario = Convert.ToString(txtusuario.Text);
             string senha1 = Convert.ToString(txtsenha.Text);
             string senha = Convert.ToString(criptografia.gerarmd5(senha1));
-
+            
             int count = blogin.vlogin(usuario, senha);
 
             if (count != 0)
@@ -158,6 +160,8 @@ namespace Sap.telas.login
                 this.Visible = false;
 
             }
+
+            
 
             else
             { MessageBox.Show("Erro verifique seu usuário e senha"); }

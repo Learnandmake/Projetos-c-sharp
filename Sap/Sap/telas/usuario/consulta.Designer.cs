@@ -246,6 +246,7 @@
             // 
             // gp1
             // 
+            this.gp1.BackColor = System.Drawing.Color.Transparent;
             this.gp1.Controls.Add(this.picreturn);
             this.gp1.Controls.Add(this.cboacesso);
             this.gp1.Controls.Add(this.label11);

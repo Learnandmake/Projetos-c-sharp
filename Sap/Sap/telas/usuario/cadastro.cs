@@ -295,5 +295,10 @@ namespace Sap.telas.usuario
         {
 
         }
+
+        private void cbocargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
