@@ -165,11 +165,24 @@
     <Compile Include="telas\login\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="telas\menu\principal.cs">
+    <Compile Include="telas\menu\menufin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="telas\menu\principal.Designer.cs">
-      <DependentUpon>principal.cs</DependentUpon>
+    <Compile Include="telas\menu\menufin.Designer.cs">
+      <DependentUpon>menufin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\menu\menurh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\menu\.Designer.cs">
+      <DependentUpon>menurh.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\menu\menulog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\menu\menulog.Designer.cs">
+      <DependentUpon>menulog.cs</DependentUpon>
     </Compile>
     <Compile Include="telas\usuario\cadastro.cs">
       <SubType>Form</SubType>
@@ -198,8 +211,14 @@
     <EmbeddedResource Include="telas\login\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telas\menu\principal.resx">
-      <DependentUpon>principal.cs</DependentUpon>
+    <EmbeddedResource Include="telas\menu\menufin.resx">
+      <DependentUpon>menufin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\menu\menurh.resx">
+      <DependentUpon>menurh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\menu\menulog.resx">
+      <DependentUpon>menulog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\usuario\cadastro.resx">
       <DependentUpon>cadastro.cs</DependentUpon>

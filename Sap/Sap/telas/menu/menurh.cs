@@ -46,12 +46,6 @@ namespace Sap.telas.menu
             picfoto.Image = System.Drawing.Image.FromStream(ms);
         }
 
-        private void picadd_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<usuario.cadastro>();
-        }
-
-        
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -82,11 +76,6 @@ namespace Sap.telas.menu
             if (Application.OpenForms["Form1"] == null)
                 picadd.BackColor = Color.FromArgb(4, 41, 68);
 
-        }
-
-        private void picsearch_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<usuario.consulta>();
         }
 
         private void picrestore_Click(object sender, EventArgs e)
@@ -158,6 +147,16 @@ namespace Sap.telas.menu
         {
             lbltime.Text = (DateTime.Now.ToString("HH:mm:ss"));
 
+        }
+
+        private void picadd_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<usuario.cadastro>();
+        }
+
+        private void picsearch_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<usuario.consulta>();
         }
     }
     }

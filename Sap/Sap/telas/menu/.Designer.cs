@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(principal));
             this.picbarra = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picadd = new System.Windows.Forms.PictureBox();
-            this.picsearch = new System.Windows.Forms.PictureBox();
             this.picbackup = new System.Windows.Forms.PictureBox();
             this.picrestore = new System.Windows.Forms.PictureBox();
             this.panelformularios = new System.Windows.Forms.PictureBox();
@@ -45,16 +43,18 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.picfoto = new System.Windows.Forms.PictureBox();
+            this.picsearch = new System.Windows.Forms.PictureBox();
+            this.picadd = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbarra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picadd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picsearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbackup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picrestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelformularios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picminimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picfechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picfoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picadd)).BeginInit();
             this.SuspendLayout();
             // 
             // picbarra
@@ -74,30 +74,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(86, 365);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // picadd
-            // 
-            this.picadd.BackColor = System.Drawing.Color.Teal;
-            this.picadd.Image = ((System.Drawing.Image)(resources.GetObject("picadd.Image")));
-            this.picadd.Location = new System.Drawing.Point(6, 42);
-            this.picadd.Name = "picadd";
-            this.picadd.Size = new System.Drawing.Size(62, 62);
-            this.picadd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picadd.TabIndex = 2;
-            this.picadd.TabStop = false;
-            this.picadd.Click += new System.EventHandler(this.picadd_Click);
-            // 
-            // picsearch
-            // 
-            this.picsearch.BackColor = System.Drawing.Color.Teal;
-            this.picsearch.Image = ((System.Drawing.Image)(resources.GetObject("picsearch.Image")));
-            this.picsearch.Location = new System.Drawing.Point(5, 119);
-            this.picsearch.Name = "picsearch";
-            this.picsearch.Size = new System.Drawing.Size(62, 62);
-            this.picsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picsearch.TabIndex = 3;
-            this.picsearch.TabStop = false;
-            this.picsearch.Click += new System.EventHandler(this.picsearch_Click);
             // 
             // picbackup
             // 
@@ -223,11 +199,37 @@
             this.picfoto.TabIndex = 26;
             this.picfoto.TabStop = false;
             // 
+            // picsearch
+            // 
+            this.picsearch.BackColor = System.Drawing.Color.Teal;
+            this.picsearch.Image = ((System.Drawing.Image)(resources.GetObject("picsearch.Image")));
+            this.picsearch.Location = new System.Drawing.Point(8, 97);
+            this.picsearch.Name = "picsearch";
+            this.picsearch.Size = new System.Drawing.Size(62, 46);
+            this.picsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picsearch.TabIndex = 28;
+            this.picsearch.TabStop = false;
+            this.picsearch.Click += new System.EventHandler(this.picsearch_Click_1);
+            // 
+            // picadd
+            // 
+            this.picadd.BackColor = System.Drawing.Color.Teal;
+            this.picadd.Image = ((System.Drawing.Image)(resources.GetObject("picadd.Image")));
+            this.picadd.Location = new System.Drawing.Point(8, 41);
+            this.picadd.Name = "picadd";
+            this.picadd.Size = new System.Drawing.Size(62, 50);
+            this.picadd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picadd.TabIndex = 27;
+            this.picadd.TabStop = false;
+            this.picadd.Click += new System.EventHandler(this.picadd_Click_1);
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 399);
+            this.Controls.Add(this.picsearch);
+            this.Controls.Add(this.picadd);
             this.Controls.Add(this.picfoto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbltime);
@@ -238,8 +240,6 @@
             this.Controls.Add(this.panelformularios);
             this.Controls.Add(this.picrestore);
             this.Controls.Add(this.picbackup);
-            this.Controls.Add(this.picsearch);
-            this.Controls.Add(this.picadd);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picbarra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -248,14 +248,14 @@
             this.Text = "principal";
             ((System.ComponentModel.ISupportInitialize)(this.picbarra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picadd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picsearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbackup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picrestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelformularios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picminimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picfechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picfoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picadd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,8 +265,6 @@
 
         private System.Windows.Forms.PictureBox picbarra;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox picadd;
-        private System.Windows.Forms.PictureBox picsearch;
         private System.Windows.Forms.PictureBox picbackup;
         private System.Windows.Forms.PictureBox picrestore;
         private System.Windows.Forms.PictureBox panelformularios;
@@ -278,5 +276,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picfoto;
+        private System.Windows.Forms.PictureBox picsearch;
+        private System.Windows.Forms.PictureBox picadd;
     }
 }
