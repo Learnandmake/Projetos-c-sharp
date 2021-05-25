@@ -1,1 +1,1 @@
-programa voltado para teste e fixação de estudos.
+repositorio voltado para teste e fixação de estudos.
