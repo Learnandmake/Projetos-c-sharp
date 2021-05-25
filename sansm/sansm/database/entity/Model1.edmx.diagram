@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8438946a67d444f28fb2b0081290671c" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="sanmsModel.cliente" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.colaborador" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.contato" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.despesa" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.documento" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.endereco" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.estoque" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.fornecedor" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.login" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.patrimonio" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.produto" Width="1.5" PointX="1.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.receita" Width="1.5" PointX="5.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.rh" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.salario" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.sugestao" Width="1.5" PointX="8.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.troca" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanmsModel.venda" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <AssociationConnector Association="sanmsModel.contato_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.documento_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.endereco_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.login_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.sugestao_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.troca_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.venda_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.contato_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.documento_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.endereco_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.login_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.rh_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.salario_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.contato_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.contato_ibfk_4" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.patrimonio_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.sugestao_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.endereco_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.endereco_ibfk_4" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.patrimonio_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.estoque_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.fornecedor_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.patrimonio_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.troca_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="sanmsModel.venda_ibfk_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

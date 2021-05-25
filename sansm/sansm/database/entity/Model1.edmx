@@ -1,0 +1,1608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sanmsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="idcliente" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="150" />
+          <Property Name="dt_nascimento" Type="datetime" Precision="0" />
+          <Property Name="idade" Type="int" />
+          <Property Name="genero" Type="enum" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="colaborador">
+          <Key>
+            <PropertyRef Name="idcolaborador" />
+          </Key>
+          <Property Name="idcolaborador" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="150" />
+          <Property Name="dt_nascimento" Type="datetime" Precision="0" />
+          <Property Name="idade" Type="int" />
+          <Property Name="genero" Type="enum" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="contato">
+          <Key>
+            <PropertyRef Name="idcontato" />
+          </Key>
+          <Property Name="idcontato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="telefonere" Type="varchar" MaxLength="150" />
+          <Property Name="telefonecel" Type="varchar" MaxLength="150" />
+          <Property Name="email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+          <Property Name="idcolaborador" Type="varchar" MaxLength="150" />
+          <Property Name="idfornecedor" Type="int" />
+          <Property Name="idestoque" Type="int" />
+        </EntityType>
+        <EntityType Name="despesa">
+          <Key>
+            <PropertyRef Name="iddespesa" />
+          </Key>
+          <Property Name="iddespesa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="enum" />
+          <Property Name="nmboleto" Type="varchar" MaxLength="150" />
+          <Property Name="nmproduto" Type="varchar" MaxLength="150" />
+          <Property Name="nmservico" Type="varchar" MaxLength="150" />
+          <Property Name="valor" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="vencimento" Type="datetime" Precision="0" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="documento">
+          <Key>
+            <PropertyRef Name="iddocumento" />
+          </Key>
+          <Property Name="iddocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cpf" Type="char" MaxLength="14" />
+          <Property Name="cnpj" Type="char" MaxLength="18" />
+          <Property Name="pis" Type="char" MaxLength="14" />
+          <Property Name="teleitor" Type="char" MaxLength="17" />
+          <Property Name="creservisrar" Type="char" MaxLength="15" />
+          <Property Name="foto" Type="longblob" />
+          <Property Name="certidaons" Type="char" MaxLength="40" />
+          <Property Name="comproresidencial" Type="bool" />
+          <Property Name="comproescolaridade" Type="bool" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+          <Property Name="idcolaborador" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="idendereco" />
+          </Key>
+          <Property Name="idendereco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cep" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="rua" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="complemento1" Type="varchar" MaxLength="150" />
+          <Property Name="complemento2" Type="varchar" MaxLength="150" />
+          <Property Name="numero" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+          <Property Name="idcolaborador" Type="varchar" MaxLength="150" />
+          <Property Name="idfornecedor" Type="int" />
+          <Property Name="idestoque" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'def.sanms.entrega' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="entrega">
+          <Property Name="dtprev" Type="datetime" Precision="0" />
+          <Property Name="dtentrega" Type="datetime" Precision="0" />
+          <Property Name="obs" Type="varchar" MaxLength="150" />
+          <Property Name="protocolo" Type="enum" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+          <Property Name="idendereco" Type="int" />
+          <Property Name="idcontato" Type="int" />
+        </EntityType>-->
+        <EntityType Name="estoque">
+          <Key>
+            <PropertyRef Name="idestoque" />
+          </Key>
+          <Property Name="idestoque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="150" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+          <Property Name="idproduto" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'def.sanms.fluxodecaixa' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="fluxodecaixa">
+          <Property Name="nscaixa" Type="bool" />
+          <Property Name="vlnscaixa" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="flcaixamensal" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="flcaixaanual" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+          <Property Name="iddespesa" Type="int" />
+          <Property Name="idreceita" Type="int" />
+        </EntityType>-->
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="idfornecedor" />
+          </Key>
+          <Property Name="idfornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="150" />
+          <Property Name="tipo" Type="enum" />
+          <Property Name="obs" Type="varchar" MaxLength="150" />
+          <Property Name="idproduto" Type="int" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="idlogin" />
+          </Key>
+          <Property Name="idlogin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="departamento" Type="enum" />
+          <Property Name="acesso" Type="enum" />
+          <Property Name="senha" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+          <Property Name="idcolaborador" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="patrimonio">
+          <Key>
+            <PropertyRef Name="idpatrimonio" />
+          </Key>
+          <Property Name="idpatrimonio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="enum" />
+          <Property Name="mlcarro" Type="varchar" MaxLength="150" />
+          <Property Name="placa" Type="char" MaxLength="7" />
+          <Property Name="mlequipamento" Type="varchar" MaxLength="150" />
+          <Property Name="mlmateria" Type="varchar" MaxLength="150" />
+          <Property Name="mlmovel" Type="varchar" MaxLength="150" />
+          <Property Name="idfornecedor" Type="int" />
+          <Property Name="idendereco" Type="int" />
+          <Property Name="idcontato" Type="int" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="idproduto" />
+          </Key>
+          <Property Name="idproduto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="150" />
+          <Property Name="tipo" Type="enum" />
+          <Property Name="foto" Type="longblob" />
+          <Property Name="qtd" Type="int" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="receita">
+          <Key>
+            <PropertyRef Name="idreceita" />
+          </Key>
+          <Property Name="idreceita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vendaaprazo" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="vendaervico" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="nmreceitaadicional" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="vlreceitaacionla" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="rh">
+          <Key>
+            <PropertyRef Name="idrh" />
+          </Key>
+          <Property Name="idrh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ferias_dtentrada" Type="datetime" Precision="0" />
+          <Property Name="ferias_dtsaida" Type="datetime" Precision="0" />
+          <Property Name="ativo" Type="bool" />
+          <Property Name="dt_contratacao" Type="datetime" Precision="0" />
+          <Property Name="dt_demissao" Type="datetime" Precision="0" />
+          <Property Name="falta" Type="datetime" Precision="0" />
+          <Property Name="idcolaborador" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="salario">
+          <Key>
+            <PropertyRef Name="idsalario" />
+          </Key>
+          <Property Name="idsalario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="salarioliquido" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="salariobruto" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="acrescimos" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="decrescimos" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="mesalteracao" Type="datetime" Precision="0" />
+          <Property Name="conta" Type="varchar" MaxLength="150" />
+          <Property Name="banco" Type="varchar" MaxLength="150" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+          <Property Name="idcolaborador" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sugestao">
+          <Key>
+            <PropertyRef Name="idsugestao" />
+          </Key>
+          <Property Name="idsugestao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nota" Type="int" />
+          <Property Name="idcontato" Type="int" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="troca">
+          <Key>
+            <PropertyRef Name="idtroca" />
+          </Key>
+          <Property Name="idtroca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="razao" Type="varchar" MaxLength="150" />
+          <Property Name="idprodutodevolvido" Type="int" />
+          <Property Name="registro" Type="datetime" Precision="0" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+          <Property Name="idproduto" Type="int" />
+        </EntityType>
+        <EntityType Name="venda">
+          <Key>
+            <PropertyRef Name="idvenda" />
+          </Key>
+          <Property Name="idvenda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dt_venda" Type="datetime" Precision="0" />
+          <Property Name="pagamento" Type="enum" />
+          <Property Name="tp_venda" Type="enum" />
+          <Property Name="qtd_produto" Type="int" />
+          <Property Name="idproduto" Type="int" />
+          <Property Name="idcliente" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <Association Name="contato_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_3">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="idfornecedor" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idfornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_4">
+          <End Role="estoque" Type="Self.estoque" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estoque">
+              <PropertyRef Name="idestoque" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idestoque" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="documento_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="documento" Type="Self.documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="documento">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="documento_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="documento" Type="Self.documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="documento">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_3">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="idfornecedor" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idfornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_4">
+          <End Role="estoque" Type="Self.estoque" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estoque">
+              <PropertyRef Name="idestoque" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idestoque" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'def.sanms.entrega' is referenced by a relationship, but cannot be found.
+        <Association Name="entrega_ibfk_1" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'def.sanms.entrega' is referenced by a relationship, but cannot be found.
+        <Association Name="entrega_ibfk_2" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'def.sanms.entrega' is referenced by a relationship, but cannot be found.
+        <Association Name="entrega_ibfk_3" />-->
+        <Association Name="estoque_ibfk_1">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="estoque" Type="Self.estoque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="estoque">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'def.sanms.fluxodecaixa' is referenced by a relationship, but cannot be found.
+        <Association Name="fluxodecaixa_ibfk_1" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'def.sanms.fluxodecaixa' is referenced by a relationship, but cannot be found.
+        <Association Name="fluxodecaixa_ibfk_2" />-->
+        <Association Name="fornecedor_ibfk_1">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="fornecedor">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="login_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="login" Type="Self.login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="login">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="login_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="login" Type="Self.login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="login">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="patrimonio_ibfk_1">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="patrimonio" Type="Self.patrimonio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="idfornecedor" />
+            </Principal>
+            <Dependent Role="patrimonio">
+              <PropertyRef Name="idfornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="patrimonio_ibfk_2">
+          <End Role="endereco" Type="Self.endereco" Multiplicity="0..1" />
+          <End Role="patrimonio" Type="Self.patrimonio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="endereco">
+              <PropertyRef Name="idendereco" />
+            </Principal>
+            <Dependent Role="patrimonio">
+              <PropertyRef Name="idendereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="patrimonio_ibfk_3">
+          <End Role="contato" Type="Self.contato" Multiplicity="0..1" />
+          <End Role="patrimonio" Type="Self.patrimonio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contato">
+              <PropertyRef Name="idcontato" />
+            </Principal>
+            <Dependent Role="patrimonio">
+              <PropertyRef Name="idcontato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="rh_ibfk_1">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="rh" Type="Self.rh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="rh">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="salario_ibfk_1">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="salario" Type="Self.salario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="salario">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sugestao_ibfk_1">
+          <End Role="contato" Type="Self.contato" Multiplicity="0..1" />
+          <End Role="sugestao" Type="Self.sugestao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contato">
+              <PropertyRef Name="idcontato" />
+            </Principal>
+            <Dependent Role="sugestao">
+              <PropertyRef Name="idcontato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sugestao_ibfk_2">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="sugestao" Type="Self.sugestao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="sugestao">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="troca_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="troca" Type="Self.troca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="troca">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="troca_ibfk_2">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="troca" Type="Self.troca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="troca">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="venda_ibfk_1">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="venda" Type="Self.venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="venda">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="venda_ibfk_2">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="venda" Type="Self.venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="venda">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sanmsModelStoreContainer">
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="colaborador" EntityType="Self.colaborador" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="contato" EntityType="Self.contato" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="despesa" EntityType="Self.despesa" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="documento" EntityType="Self.documento" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="endereco" EntityType="Self.endereco" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="estoque" EntityType="Self.estoque" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="patrimonio" EntityType="Self.patrimonio" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="produto" EntityType="Self.produto" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="receita" EntityType="Self.receita" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="rh" EntityType="Self.rh" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="salario" EntityType="Self.salario" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="sugestao" EntityType="Self.sugestao" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="troca" EntityType="Self.troca" Schema="sanms" store:Type="Tables" />
+          <EntitySet Name="venda" EntityType="Self.venda" Schema="sanms" store:Type="Tables" />
+          <AssociationSet Name="contato_ibfk_1" Association="Self.contato_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_2" Association="Self.contato_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_3" Association="Self.contato_ibfk_3">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_4" Association="Self.contato_ibfk_4">
+            <End Role="estoque" EntitySet="estoque" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="documento_ibfk_1" Association="Self.documento_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="documento" EntitySet="documento" />
+          </AssociationSet>
+          <AssociationSet Name="documento_ibfk_2" Association="Self.documento_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="documento" EntitySet="documento" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_1" Association="Self.endereco_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_2" Association="Self.endereco_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_3" Association="Self.endereco_ibfk_3">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_4" Association="Self.endereco_ibfk_4">
+            <End Role="estoque" EntitySet="estoque" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="estoque_ibfk_1" Association="Self.estoque_ibfk_1">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="estoque" EntitySet="estoque" />
+          </AssociationSet>
+          <AssociationSet Name="fornecedor_ibfk_1" Association="Self.fornecedor_ibfk_1">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="fornecedor" EntitySet="fornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="login_ibfk_1" Association="Self.login_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="login" EntitySet="login" />
+          </AssociationSet>
+          <AssociationSet Name="login_ibfk_2" Association="Self.login_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="login" EntitySet="login" />
+          </AssociationSet>
+          <AssociationSet Name="patrimonio_ibfk_1" Association="Self.patrimonio_ibfk_1">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="patrimonio" EntitySet="patrimonio" />
+          </AssociationSet>
+          <AssociationSet Name="patrimonio_ibfk_2" Association="Self.patrimonio_ibfk_2">
+            <End Role="endereco" EntitySet="endereco" />
+            <End Role="patrimonio" EntitySet="patrimonio" />
+          </AssociationSet>
+          <AssociationSet Name="patrimonio_ibfk_3" Association="Self.patrimonio_ibfk_3">
+            <End Role="contato" EntitySet="contato" />
+            <End Role="patrimonio" EntitySet="patrimonio" />
+          </AssociationSet>
+          <AssociationSet Name="rh_ibfk_1" Association="Self.rh_ibfk_1">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="rh" EntitySet="rh" />
+          </AssociationSet>
+          <AssociationSet Name="salario_ibfk_1" Association="Self.salario_ibfk_1">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="salario" EntitySet="salario" />
+          </AssociationSet>
+          <AssociationSet Name="sugestao_ibfk_1" Association="Self.sugestao_ibfk_1">
+            <End Role="contato" EntitySet="contato" />
+            <End Role="sugestao" EntitySet="sugestao" />
+          </AssociationSet>
+          <AssociationSet Name="sugestao_ibfk_2" Association="Self.sugestao_ibfk_2">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="sugestao" EntitySet="sugestao" />
+          </AssociationSet>
+          <AssociationSet Name="troca_ibfk_1" Association="Self.troca_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="troca" EntitySet="troca" />
+          </AssociationSet>
+          <AssociationSet Name="troca_ibfk_2" Association="Self.troca_ibfk_2">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="troca" EntitySet="troca" />
+          </AssociationSet>
+          <AssociationSet Name="venda_ibfk_1" Association="Self.venda_ibfk_1">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="venda" EntitySet="venda" />
+          </AssociationSet>
+          <AssociationSet Name="venda_ibfk_2" Association="Self.venda_ibfk_2">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="venda" EntitySet="venda" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sanmsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="dt_nascimento" Type="DateTime" />
+          <Property Name="idade" Type="Int32" />
+          <Property Name="genero" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="registro" Type="DateTime" />
+          <NavigationProperty Name="contato" Relationship="Self.contato_ibfk_1" FromRole="cliente" ToRole="contato" />
+          <NavigationProperty Name="documento" Relationship="Self.documento_ibfk_1" FromRole="cliente" ToRole="documento" />
+          <NavigationProperty Name="endereco" Relationship="Self.endereco_ibfk_1" FromRole="cliente" ToRole="endereco" />
+          <NavigationProperty Name="login" Relationship="Self.login_ibfk_1" FromRole="cliente" ToRole="login" />
+          <NavigationProperty Name="sugestao" Relationship="Self.sugestao_ibfk_2" FromRole="cliente" ToRole="sugestao" />
+          <NavigationProperty Name="troca" Relationship="Self.troca_ibfk_1" FromRole="cliente" ToRole="troca" />
+          <NavigationProperty Name="venda" Relationship="Self.venda_ibfk_2" FromRole="cliente" ToRole="venda" />
+        </EntityType>
+        <EntityType Name="colaborador">
+          <Key>
+            <PropertyRef Name="idcolaborador" />
+          </Key>
+          <Property Name="idcolaborador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="dt_nascimento" Type="DateTime" />
+          <Property Name="idade" Type="Int32" />
+          <Property Name="genero" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="registro" Type="DateTime" />
+          <NavigationProperty Name="contato" Relationship="Self.contato_ibfk_2" FromRole="colaborador" ToRole="contato" />
+          <NavigationProperty Name="documento" Relationship="Self.documento_ibfk_2" FromRole="colaborador" ToRole="documento" />
+          <NavigationProperty Name="endereco" Relationship="Self.endereco_ibfk_2" FromRole="colaborador" ToRole="endereco" />
+          <NavigationProperty Name="login" Relationship="Self.login_ibfk_2" FromRole="colaborador" ToRole="login" />
+          <NavigationProperty Name="rh" Relationship="Self.rh_ibfk_1" FromRole="colaborador" ToRole="rh" />
+          <NavigationProperty Name="salario" Relationship="Self.salario_ibfk_1" FromRole="colaborador" ToRole="salario" />
+        </EntityType>
+        <EntityType Name="contato">
+          <Key>
+            <PropertyRef Name="idcontato" />
+          </Key>
+          <Property Name="idcontato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="telefonere" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="telefonecel" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registro" Type="DateTime" />
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idcolaborador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idfornecedor" Type="Int32" />
+          <Property Name="idestoque" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.contato_ibfk_1" FromRole="contato" ToRole="cliente" />
+          <NavigationProperty Name="colaborador" Relationship="Self.contato_ibfk_2" FromRole="contato" ToRole="colaborador" />
+          <NavigationProperty Name="fornecedor" Relationship="Self.contato_ibfk_3" FromRole="contato" ToRole="fornecedor" />
+          <NavigationProperty Name="estoque" Relationship="Self.contato_ibfk_4" FromRole="contato" ToRole="estoque" />
+          <NavigationProperty Name="patrimonio" Relationship="Self.patrimonio_ibfk_3" FromRole="contato" ToRole="patrimonio" />
+          <NavigationProperty Name="sugestao" Relationship="Self.sugestao_ibfk_1" FromRole="contato" ToRole="sugestao" />
+        </EntityType>
+        <EntityType Name="despesa">
+          <Key>
+            <PropertyRef Name="iddespesa" />
+          </Key>
+          <Property Name="iddespesa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="nmboleto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="nmproduto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="nmservico" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Decimal" />
+          <Property Name="vencimento" Type="DateTime" />
+          <Property Name="registro" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="documento">
+          <Key>
+            <PropertyRef Name="iddocumento" />
+          </Key>
+          <Property Name="iddocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cpf" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="cnpj" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="pis" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="teleitor" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="creservisrar" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="certidaons" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="comproresidencial" Type="Boolean" />
+          <Property Name="comproescolaridade" Type="Boolean" />
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idcolaborador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.documento_ibfk_1" FromRole="documento" ToRole="cliente" />
+          <NavigationProperty Name="colaborador" Relationship="Self.documento_ibfk_2" FromRole="documento" ToRole="colaborador" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="idendereco" />
+          </Key>
+          <Property Name="idendereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cep" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rua" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="complemento1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="complemento2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="registro" Type="DateTime" />
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idcolaborador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idfornecedor" Type="Int32" />
+          <Property Name="idestoque" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.endereco_ibfk_1" FromRole="endereco" ToRole="cliente" />
+          <NavigationProperty Name="colaborador" Relationship="Self.endereco_ibfk_2" FromRole="endereco" ToRole="colaborador" />
+          <NavigationProperty Name="fornecedor" Relationship="Self.endereco_ibfk_3" FromRole="endereco" ToRole="fornecedor" />
+          <NavigationProperty Name="estoque" Relationship="Self.endereco_ibfk_4" FromRole="endereco" ToRole="estoque" />
+          <NavigationProperty Name="patrimonio" Relationship="Self.patrimonio_ibfk_2" FromRole="endereco" ToRole="patrimonio" />
+        </EntityType>
+        <EntityType Name="estoque">
+          <Key>
+            <PropertyRef Name="idestoque" />
+          </Key>
+          <Property Name="idestoque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="registro" Type="DateTime" />
+          <Property Name="idproduto" Type="Int32" />
+          <NavigationProperty Name="contato" Relationship="Self.contato_ibfk_4" FromRole="estoque" ToRole="contato" />
+          <NavigationProperty Name="endereco" Relationship="Self.endereco_ibfk_4" FromRole="estoque" ToRole="endereco" />
+          <NavigationProperty Name="produto" Relationship="Self.estoque_ibfk_1" FromRole="estoque" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="idfornecedor" />
+          </Key>
+          <Property Name="idfornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="obs" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idproduto" Type="Int32" />
+          <NavigationProperty Name="contato" Relationship="Self.contato_ibfk_3" FromRole="fornecedor" ToRole="contato" />
+          <NavigationProperty Name="endereco" Relationship="Self.endereco_ibfk_3" FromRole="fornecedor" ToRole="endereco" />
+          <NavigationProperty Name="produto" Relationship="Self.fornecedor_ibfk_1" FromRole="fornecedor" ToRole="produto" />
+          <NavigationProperty Name="patrimonio" Relationship="Self.patrimonio_ibfk_1" FromRole="fornecedor" ToRole="patrimonio" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="idlogin" />
+          </Key>
+          <Property Name="idlogin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="departamento" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="acesso" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="senha" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idcolaborador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.login_ibfk_1" FromRole="login" ToRole="cliente" />
+          <NavigationProperty Name="colaborador" Relationship="Self.login_ibfk_2" FromRole="login" ToRole="colaborador" />
+        </EntityType>
+        <EntityType Name="patrimonio">
+          <Key>
+            <PropertyRef Name="idpatrimonio" />
+          </Key>
+          <Property Name="idpatrimonio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="mlcarro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="placa" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="mlequipamento" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="mlmateria" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="mlmovel" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idfornecedor" Type="Int32" />
+          <Property Name="idendereco" Type="Int32" />
+          <Property Name="idcontato" Type="Int32" />
+          <NavigationProperty Name="contato" Relationship="Self.patrimonio_ibfk_3" FromRole="patrimonio" ToRole="contato" />
+          <NavigationProperty Name="endereco" Relationship="Self.patrimonio_ibfk_2" FromRole="patrimonio" ToRole="endereco" />
+          <NavigationProperty Name="fornecedor" Relationship="Self.patrimonio_ibfk_1" FromRole="patrimonio" ToRole="fornecedor" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="idproduto" />
+          </Key>
+          <Property Name="idproduto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="qtd" Type="Int32" />
+          <Property Name="registro" Type="DateTime" />
+          <NavigationProperty Name="estoque" Relationship="Self.estoque_ibfk_1" FromRole="produto" ToRole="estoque" />
+          <NavigationProperty Name="fornecedor" Relationship="Self.fornecedor_ibfk_1" FromRole="produto" ToRole="fornecedor" />
+          <NavigationProperty Name="troca" Relationship="Self.troca_ibfk_2" FromRole="produto" ToRole="troca" />
+          <NavigationProperty Name="venda" Relationship="Self.venda_ibfk_1" FromRole="produto" ToRole="venda" />
+        </EntityType>
+        <EntityType Name="receita">
+          <Key>
+            <PropertyRef Name="idreceita" />
+          </Key>
+          <Property Name="idreceita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vendaaprazo" Type="Decimal" />
+          <Property Name="vendaervico" Type="Decimal" />
+          <Property Name="nmreceitaadicional" Type="Decimal" />
+          <Property Name="vlreceitaacionla" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="rh">
+          <Key>
+            <PropertyRef Name="idrh" />
+          </Key>
+          <Property Name="idrh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ferias_dtentrada" Type="DateTime" />
+          <Property Name="ferias_dtsaida" Type="DateTime" />
+          <Property Name="ativo" Type="Boolean" />
+          <Property Name="dt_contratacao" Type="DateTime" />
+          <Property Name="dt_demissao" Type="DateTime" />
+          <Property Name="falta" Type="DateTime" />
+          <Property Name="idcolaborador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="colaborador" Relationship="Self.rh_ibfk_1" FromRole="rh" ToRole="colaborador" />
+        </EntityType>
+        <EntityType Name="salario">
+          <Key>
+            <PropertyRef Name="idsalario" />
+          </Key>
+          <Property Name="idsalario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="salarioliquido" Type="Decimal" />
+          <Property Name="salariobruto" Type="Decimal" />
+          <Property Name="acrescimos" Type="Decimal" />
+          <Property Name="decrescimos" Type="Decimal" />
+          <Property Name="mesalteracao" Type="DateTime" />
+          <Property Name="conta" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="banco" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="registro" Type="DateTime" />
+          <Property Name="idcolaborador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="colaborador" Relationship="Self.salario_ibfk_1" FromRole="salario" ToRole="colaborador" />
+        </EntityType>
+        <EntityType Name="sugestao">
+          <Key>
+            <PropertyRef Name="idsugestao" />
+          </Key>
+          <Property Name="idsugestao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nota" Type="Int32" />
+          <Property Name="idcontato" Type="Int32" />
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.sugestao_ibfk_2" FromRole="sugestao" ToRole="cliente" />
+          <NavigationProperty Name="contato" Relationship="Self.sugestao_ibfk_1" FromRole="sugestao" ToRole="contato" />
+        </EntityType>
+        <EntityType Name="troca">
+          <Key>
+            <PropertyRef Name="idtroca" />
+          </Key>
+          <Property Name="idtroca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="razao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idprodutodevolvido" Type="Int32" />
+          <Property Name="registro" Type="DateTime" />
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="idproduto" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.troca_ibfk_1" FromRole="troca" ToRole="cliente" />
+          <NavigationProperty Name="produto" Relationship="Self.troca_ibfk_2" FromRole="troca" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="venda">
+          <Key>
+            <PropertyRef Name="idvenda" />
+          </Key>
+          <Property Name="idvenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dt_venda" Type="DateTime" />
+          <Property Name="pagamento" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="tp_venda" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="qtd_produto" Type="Int32" />
+          <Property Name="idproduto" Type="Int32" />
+          <Property Name="idcliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.venda_ibfk_2" FromRole="venda" ToRole="cliente" />
+          <NavigationProperty Name="produto" Relationship="Self.venda_ibfk_1" FromRole="venda" ToRole="produto" />
+        </EntityType>
+        <Association Name="contato_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="documento_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="documento" Type="Self.documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="documento">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="login_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="login" Type="Self.login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="login">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sugestao_ibfk_2">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="sugestao" Type="Self.sugestao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="sugestao">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="troca_ibfk_1">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="troca" Type="Self.troca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="troca">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="venda_ibfk_2">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="venda" Type="Self.venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="venda">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="documento_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="documento" Type="Self.documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="documento">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="login_ibfk_2">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="login" Type="Self.login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="login">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="rh_ibfk_1">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="rh" Type="Self.rh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="rh">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="salario_ibfk_1">
+          <End Role="colaborador" Type="Self.colaborador" Multiplicity="0..1" />
+          <End Role="salario" Type="Self.salario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colaborador">
+              <PropertyRef Name="idcolaborador" />
+            </Principal>
+            <Dependent Role="salario">
+              <PropertyRef Name="idcolaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_3">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="idfornecedor" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idfornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contato_ibfk_4">
+          <End Role="estoque" Type="Self.estoque" Multiplicity="0..1" />
+          <End Role="contato" Type="Self.contato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estoque">
+              <PropertyRef Name="idestoque" />
+            </Principal>
+            <Dependent Role="contato">
+              <PropertyRef Name="idestoque" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="patrimonio_ibfk_3">
+          <End Role="contato" Type="Self.contato" Multiplicity="0..1" />
+          <End Role="patrimonio" Type="Self.patrimonio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contato">
+              <PropertyRef Name="idcontato" />
+            </Principal>
+            <Dependent Role="patrimonio">
+              <PropertyRef Name="idcontato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sugestao_ibfk_1">
+          <End Role="contato" Type="Self.contato" Multiplicity="0..1" />
+          <End Role="sugestao" Type="Self.sugestao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contato">
+              <PropertyRef Name="idcontato" />
+            </Principal>
+            <Dependent Role="sugestao">
+              <PropertyRef Name="idcontato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_3">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="idfornecedor" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idfornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="endereco_ibfk_4">
+          <End Role="estoque" Type="Self.estoque" Multiplicity="0..1" />
+          <End Role="endereco" Type="Self.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estoque">
+              <PropertyRef Name="idestoque" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="idestoque" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="patrimonio_ibfk_2">
+          <End Role="endereco" Type="Self.endereco" Multiplicity="0..1" />
+          <End Role="patrimonio" Type="Self.patrimonio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="endereco">
+              <PropertyRef Name="idendereco" />
+            </Principal>
+            <Dependent Role="patrimonio">
+              <PropertyRef Name="idendereco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="estoque_ibfk_1">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="estoque" Type="Self.estoque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="estoque">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fornecedor_ibfk_1">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="fornecedor">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="patrimonio_ibfk_1">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="patrimonio" Type="Self.patrimonio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="idfornecedor" />
+            </Principal>
+            <Dependent Role="patrimonio">
+              <PropertyRef Name="idfornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="troca_ibfk_2">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="troca" Type="Self.troca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="troca">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="venda_ibfk_1">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="venda" Type="Self.venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="idproduto" />
+            </Principal>
+            <Dependent Role="venda">
+              <PropertyRef Name="idproduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sanmsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cliente" EntityType="Self.cliente" />
+          <EntitySet Name="colaborador" EntityType="Self.colaborador" />
+          <EntitySet Name="contato" EntityType="Self.contato" />
+          <EntitySet Name="despesa" EntityType="Self.despesa" />
+          <EntitySet Name="documento" EntityType="Self.documento" />
+          <EntitySet Name="endereco" EntityType="Self.endereco" />
+          <EntitySet Name="estoque" EntityType="Self.estoque" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" />
+          <EntitySet Name="login" EntityType="Self.login" />
+          <EntitySet Name="patrimonio" EntityType="Self.patrimonio" />
+          <EntitySet Name="produto" EntityType="Self.produto" />
+          <EntitySet Name="receita" EntityType="Self.receita" />
+          <EntitySet Name="rh" EntityType="Self.rh" />
+          <EntitySet Name="salario" EntityType="Self.salario" />
+          <EntitySet Name="sugestao" EntityType="Self.sugestao" />
+          <EntitySet Name="troca" EntityType="Self.troca" />
+          <EntitySet Name="venda" EntityType="Self.venda" />
+          <AssociationSet Name="contato_ibfk_1" Association="Self.contato_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="documento_ibfk_1" Association="Self.documento_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="documento" EntitySet="documento" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_1" Association="Self.endereco_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="login_ibfk_1" Association="Self.login_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="login" EntitySet="login" />
+          </AssociationSet>
+          <AssociationSet Name="sugestao_ibfk_2" Association="Self.sugestao_ibfk_2">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="sugestao" EntitySet="sugestao" />
+          </AssociationSet>
+          <AssociationSet Name="troca_ibfk_1" Association="Self.troca_ibfk_1">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="troca" EntitySet="troca" />
+          </AssociationSet>
+          <AssociationSet Name="venda_ibfk_2" Association="Self.venda_ibfk_2">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="venda" EntitySet="venda" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_2" Association="Self.contato_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="documento_ibfk_2" Association="Self.documento_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="documento" EntitySet="documento" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_2" Association="Self.endereco_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="login_ibfk_2" Association="Self.login_ibfk_2">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="login" EntitySet="login" />
+          </AssociationSet>
+          <AssociationSet Name="rh_ibfk_1" Association="Self.rh_ibfk_1">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="rh" EntitySet="rh" />
+          </AssociationSet>
+          <AssociationSet Name="salario_ibfk_1" Association="Self.salario_ibfk_1">
+            <End Role="colaborador" EntitySet="colaborador" />
+            <End Role="salario" EntitySet="salario" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_3" Association="Self.contato_ibfk_3">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="contato_ibfk_4" Association="Self.contato_ibfk_4">
+            <End Role="estoque" EntitySet="estoque" />
+            <End Role="contato" EntitySet="contato" />
+          </AssociationSet>
+          <AssociationSet Name="patrimonio_ibfk_3" Association="Self.patrimonio_ibfk_3">
+            <End Role="contato" EntitySet="contato" />
+            <End Role="patrimonio" EntitySet="patrimonio" />
+          </AssociationSet>
+          <AssociationSet Name="sugestao_ibfk_1" Association="Self.sugestao_ibfk_1">
+            <End Role="contato" EntitySet="contato" />
+            <End Role="sugestao" EntitySet="sugestao" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_3" Association="Self.endereco_ibfk_3">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="endereco_ibfk_4" Association="Self.endereco_ibfk_4">
+            <End Role="estoque" EntitySet="estoque" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="patrimonio_ibfk_2" Association="Self.patrimonio_ibfk_2">
+            <End Role="endereco" EntitySet="endereco" />
+            <End Role="patrimonio" EntitySet="patrimonio" />
+          </AssociationSet>
+          <AssociationSet Name="estoque_ibfk_1" Association="Self.estoque_ibfk_1">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="estoque" EntitySet="estoque" />
+          </AssociationSet>
+          <AssociationSet Name="fornecedor_ibfk_1" Association="Self.fornecedor_ibfk_1">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="fornecedor" EntitySet="fornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="patrimonio_ibfk_1" Association="Self.patrimonio_ibfk_1">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="patrimonio" EntitySet="patrimonio" />
+          </AssociationSet>
+          <AssociationSet Name="troca_ibfk_2" Association="Self.troca_ibfk_2">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="troca" EntitySet="troca" />
+          </AssociationSet>
+          <AssociationSet Name="venda_ibfk_1" Association="Self.venda_ibfk_1">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="venda" EntitySet="venda" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sanmsModelStoreContainer" CdmEntityContainer="sanmsEntities">
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="sanmsModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+                <ScalarProperty Name="idade" ColumnName="idade" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="colaborador">
+            <EntityTypeMapping TypeName="sanmsModel.colaborador">
+              <MappingFragment StoreEntitySet="colaborador">
+                <ScalarProperty Name="idcolaborador" ColumnName="idcolaborador" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+                <ScalarProperty Name="idade" ColumnName="idade" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contato">
+            <EntityTypeMapping TypeName="sanmsModel.contato">
+              <MappingFragment StoreEntitySet="contato">
+                <ScalarProperty Name="idcontato" ColumnName="idcontato" />
+                <ScalarProperty Name="telefonere" ColumnName="telefonere" />
+                <ScalarProperty Name="telefonecel" ColumnName="telefonecel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="idcolaborador" ColumnName="idcolaborador" />
+                <ScalarProperty Name="idfornecedor" ColumnName="idfornecedor" />
+                <ScalarProperty Name="idestoque" ColumnName="idestoque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="despesa">
+            <EntityTypeMapping TypeName="sanmsModel.despesa">
+              <MappingFragment StoreEntitySet="despesa">
+                <ScalarProperty Name="iddespesa" ColumnName="iddespesa" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="nmboleto" ColumnName="nmboleto" />
+                <ScalarProperty Name="nmproduto" ColumnName="nmproduto" />
+                <ScalarProperty Name="nmservico" ColumnName="nmservico" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="vencimento" ColumnName="vencimento" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="documento">
+            <EntityTypeMapping TypeName="sanmsModel.documento">
+              <MappingFragment StoreEntitySet="documento">
+                <ScalarProperty Name="iddocumento" ColumnName="iddocumento" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+                <ScalarProperty Name="pis" ColumnName="pis" />
+                <ScalarProperty Name="teleitor" ColumnName="teleitor" />
+                <ScalarProperty Name="creservisrar" ColumnName="creservisrar" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="certidaons" ColumnName="certidaons" />
+                <ScalarProperty Name="comproresidencial" ColumnName="comproresidencial" />
+                <ScalarProperty Name="comproescolaridade" ColumnName="comproescolaridade" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="idcolaborador" ColumnName="idcolaborador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="endereco">
+            <EntityTypeMapping TypeName="sanmsModel.endereco">
+              <MappingFragment StoreEntitySet="endereco">
+                <ScalarProperty Name="idendereco" ColumnName="idendereco" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="complemento1" ColumnName="complemento1" />
+                <ScalarProperty Name="complemento2" ColumnName="complemento2" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="idcolaborador" ColumnName="idcolaborador" />
+                <ScalarProperty Name="idfornecedor" ColumnName="idfornecedor" />
+                <ScalarProperty Name="idestoque" ColumnName="idestoque" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estoque">
+            <EntityTypeMapping TypeName="sanmsModel.estoque">
+              <MappingFragment StoreEntitySet="estoque">
+                <ScalarProperty Name="idestoque" ColumnName="idestoque" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fornecedor">
+            <EntityTypeMapping TypeName="sanmsModel.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="idfornecedor" ColumnName="idfornecedor" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="sanmsModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="idlogin" ColumnName="idlogin" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+                <ScalarProperty Name="acesso" ColumnName="acesso" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="idcolaborador" ColumnName="idcolaborador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patrimonio">
+            <EntityTypeMapping TypeName="sanmsModel.patrimonio">
+              <MappingFragment StoreEntitySet="patrimonio">
+                <ScalarProperty Name="idpatrimonio" ColumnName="idpatrimonio" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="mlcarro" ColumnName="mlcarro" />
+                <ScalarProperty Name="placa" ColumnName="placa" />
+                <ScalarProperty Name="mlequipamento" ColumnName="mlequipamento" />
+                <ScalarProperty Name="mlmateria" ColumnName="mlmateria" />
+                <ScalarProperty Name="mlmovel" ColumnName="mlmovel" />
+                <ScalarProperty Name="idfornecedor" ColumnName="idfornecedor" />
+                <ScalarProperty Name="idendereco" ColumnName="idendereco" />
+                <ScalarProperty Name="idcontato" ColumnName="idcontato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="sanmsModel.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="qtd" ColumnName="qtd" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="receita">
+            <EntityTypeMapping TypeName="sanmsModel.receita">
+              <MappingFragment StoreEntitySet="receita">
+                <ScalarProperty Name="idreceita" ColumnName="idreceita" />
+                <ScalarProperty Name="vendaaprazo" ColumnName="vendaaprazo" />
+                <ScalarProperty Name="vendaervico" ColumnName="vendaervico" />
+                <ScalarProperty Name="nmreceitaadicional" ColumnName="nmreceitaadicional" />
+                <ScalarProperty Name="vlreceitaacionla" ColumnName="vlreceitaacionla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rh">
+            <EntityTypeMapping TypeName="sanmsModel.rh">
+              <MappingFragment StoreEntitySet="rh">
+                <ScalarProperty Name="idrh" ColumnName="idrh" />
+                <ScalarProperty Name="ferias_dtentrada" ColumnName="ferias_dtentrada" />
+                <ScalarProperty Name="ferias_dtsaida" ColumnName="ferias_dtsaida" />
+                <ScalarProperty Name="ativo" ColumnName="ativo" />
+                <ScalarProperty Name="dt_contratacao" ColumnName="dt_contratacao" />
+                <ScalarProperty Name="dt_demissao" ColumnName="dt_demissao" />
+                <ScalarProperty Name="falta" ColumnName="falta" />
+                <ScalarProperty Name="idcolaborador" ColumnName="idcolaborador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salario">
+            <EntityTypeMapping TypeName="sanmsModel.salario">
+              <MappingFragment StoreEntitySet="salario">
+                <ScalarProperty Name="idsalario" ColumnName="idsalario" />
+                <ScalarProperty Name="salarioliquido" ColumnName="salarioliquido" />
+                <ScalarProperty Name="salariobruto" ColumnName="salariobruto" />
+                <ScalarProperty Name="acrescimos" ColumnName="acrescimos" />
+                <ScalarProperty Name="decrescimos" ColumnName="decrescimos" />
+                <ScalarProperty Name="mesalteracao" ColumnName="mesalteracao" />
+                <ScalarProperty Name="conta" ColumnName="conta" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="idcolaborador" ColumnName="idcolaborador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sugestao">
+            <EntityTypeMapping TypeName="sanmsModel.sugestao">
+              <MappingFragment StoreEntitySet="sugestao">
+                <ScalarProperty Name="idsugestao" ColumnName="idsugestao" />
+                <ScalarProperty Name="nota" ColumnName="nota" />
+                <ScalarProperty Name="idcontato" ColumnName="idcontato" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="troca">
+            <EntityTypeMapping TypeName="sanmsModel.troca">
+              <MappingFragment StoreEntitySet="troca">
+                <ScalarProperty Name="idtroca" ColumnName="idtroca" />
+                <ScalarProperty Name="razao" ColumnName="razao" />
+                <ScalarProperty Name="idprodutodevolvido" ColumnName="idprodutodevolvido" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="venda">
+            <EntityTypeMapping TypeName="sanmsModel.venda">
+              <MappingFragment StoreEntitySet="venda">
+                <ScalarProperty Name="idvenda" ColumnName="idvenda" />
+                <ScalarProperty Name="dt_venda" ColumnName="dt_venda" />
+                <ScalarProperty Name="pagamento" ColumnName="pagamento" />
+                <ScalarProperty Name="tp_venda" ColumnName="tp_venda" />
+                <ScalarProperty Name="qtd_produto" ColumnName="qtd_produto" />
+                <ScalarProperty Name="idproduto" ColumnName="idproduto" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
