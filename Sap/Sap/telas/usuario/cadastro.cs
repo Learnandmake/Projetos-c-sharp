@@ -77,7 +77,7 @@ namespace Sap.telas.usuario
 
             Rectangle r6 = new Rectangle(0, 0, picemail.Width, picemail.Height);
             System.Drawing.Drawing2D.GraphicsPath gp6 = new System.Drawing.Drawing2D.GraphicsPath();
-            int d6  = 50;
+            int d6 = 50;
             gp6.AddArc(r6.X, r6.Y, d6, d6, 180, 90);
             gp6.AddArc(r6.X + r6.Width - d6, r6.Y, d6, d6, 270, 90);
             gp6.AddArc(r6.X + r6.Width - d6, r6.Y + r6.Height - d6, d6, d6, 0, 90);
@@ -172,12 +172,12 @@ namespace Sap.telas.usuario
                 string complemento1 = txtcomplemento.Text;
                 string complemento2 = api.complemento2;
 
-               bool idadeok= Function.verificaridade(nascimento);
-               if(idadeok==false)
-               { MessageBox.Show("É preciso ser maior de 18 para acessar esse sistema"); }
+                bool idadeok = Function.verificaridade(nascimento);
+                if (idadeok == false)
+                { MessageBox.Show("É preciso ser maior de 18 para acessar esse sistema"); }
 
                 bool emailok = Function.isemail(email);
-                if(emailok ==false)
+                if (emailok == false)
                 { MessageBox.Show("erro verifique seu email"); }
 
                 string senha = Criptografia.gerarmd5(Convert.ToString(txtsenha.Text));
@@ -215,10 +215,10 @@ namespace Sap.telas.usuario
 
                 MessageBox.Show("concluído");
             }
-        
-            catch(Exception)
+
+            catch (Exception)
             { MessageBox.Show("erro, verifique o formulário e tente novamente"); }
-            }
+        }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
@@ -293,12 +293,95 @@ namespace Sap.telas.usuario
 
         private void picsend_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                Bussines.usuario uusuario = new Bussines.usuario();
+                Bussines.contato1 ucontato = new Bussines.contato1();
+                Bussines.endereco uendereco = new Bussines.endereco();
+                Bussines.login ulogin = new Bussines.login();
+                Bussines.pesquisa upesquisa = new Bussines.pesquisa();
+                Bussines.agenda uagenda = new Bussines.agenda();
 
+                Database.Entities.usuario usuario = new Database.Entities.usuario();
+                Database.Entities.contato contato = new Database.Entities.contato();
+                Database.Entities.endereco endereco = new Database.Entities.endereco();
+                Database.Entities.login login = new Database.Entities.login();
+
+                Functions.verificar Function = new Functions.verificar();
+                Functions.criptografia Criptografia = new Functions.criptografia();
+                CorreiosApi correios = new CorreiosApi();
+
+                string nome = Convert.ToString(txtnome.Text);
+                string nick = Convert.ToString(txtusuario.Text);
+                DateTime nascimento = Convert.ToDateTime(msknascimento.Text);
+                string cargo = Convert.ToString(cbocargo.SelectedItem);
+                int idade = Function.calcularidade(nascimento);
+
+                byte[] imagebyte = null;//coverter imagem em bytes
+                FileStream fs = new FileStream(this.txtft.Text, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                imagebyte = br.ReadBytes((int)fs.Length);
+
+                string celular = Convert.ToString(mskcel.Text);
+                string residencial = Convert.ToString(mskre.Text);
+                string email = Convert.ToString(txtemail.Text);
+
+                string cep = mskcep.Text;
+                var api = correios.consultaCEP(cep);
+                string rua = api.end;
+                string numero = Convert.ToString(txtnumero.Text);
+                string complemento1 = txtcomplemento.Text;
+                string complemento2 = api.complemento2;
+
+                bool idadeok = Function.verificaridade(nascimento);
+                if (idadeok == false)
+                { MessageBox.Show("É preciso ser maior de 18 para acessar esse sistema"); }
+
+                bool emailok = Function.isemail(email);
+                if (emailok == false)
+                { MessageBox.Show("erro verifique seu email"); }
+
+                string senha = Criptografia.gerarmd5(Convert.ToString(txtsenha.Text));
+                string acesso = Convert.ToString(cboacesso.SelectedItem);
+
+                usuario.nome = nome;
+                usuario.nick = nick;
+                usuario.dt_nascimento = nascimento;
+                usuario.idade = idade;
+                usuario.registro = DateTime.Now;
+                usuario.foto = imagebyte;
+                usuario.cargo = cargo;
+
+                contato.nick = nick;
+                contato.email = email;
+                contato.telefonecel = celular;
+                contato.telefonere = residencial;
+
+                endereco.nick = nick;
+                endereco.rua = rua;
+                endereco.complemento1 = complemento1;
+                endereco.complemento2 = complemento2;
+                endereco.numero = numero;
+                endereco.cep = cep;
+
+                login.nick = nick;
+                login.acesso = acesso;
+                login.senha = senha;
+
+                uusuario.inserir(usuario);
+                ucontato.inserir(contato);
+                uendereco.inserir(endereco);
+                ulogin.inserir(login);
+
+
+                MessageBox.Show("concluído");
+            }
+
+            catch (Exception)
+            { MessageBox.Show("erro, verifique o formulário e tente novamente"); }
         }
+    
 
-        private void cbocargo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

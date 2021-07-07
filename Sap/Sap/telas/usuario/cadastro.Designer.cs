@@ -241,7 +241,7 @@
             this.cbocargo.Name = "cbocargo";
             this.cbocargo.Size = new System.Drawing.Size(111, 21);
             this.cbocargo.TabIndex = 54;
-            this.cbocargo.SelectedIndexChanged += new System.EventHandler(this.cbocargo_SelectedIndexChanged);
+            
             // 
             // msknascimento
             // 
