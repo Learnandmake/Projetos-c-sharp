@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dee5be81493e4580a4607daee6922f2c" Name="Diagram1">
-        <EntityTypeShape EntityType="estudoModel.agenda" Width="1.5" PointX="5.375" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="estudoModel.contato" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="estudoModel.endereco" Width="1.5" PointX="2.125" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="estudoModel.login" Width="1.5" PointX="7" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="estudoModel.pesquisa" Width="1.5" PointX="8.625" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="estudoModel.usuario" Width="1.5" PointX="0.5" PointY="1.75" IsExpanded="true" />
+      <Diagram DiagramId="e6a3e74fbfcc472a98ebf37104eba56b" Name="Diagram1">
+        <EntityTypeShape EntityType="estudoModel.agenda" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="estudoModel.contato" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="estudoModel.endereco" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="estudoModel.login" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="estudoModel.pesquisa" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="estudoModel.usuario" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
         <AssociationConnector Association="estudoModel.agenda_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="estudoModel.contato_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="estudoModel.nick" ManuallyRouted="false" />

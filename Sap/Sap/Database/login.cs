@@ -8,7 +8,7 @@ namespace Sap.Database
 {
     class login
     {
-        Entities.estudoEntities banco = new Entities.estudoEntities();
+        Entities.estudoEntities1 banco = new Entities.estudoEntities1();
         public void inserir(Entities.login dados)
         {
             banco.login.Add(dados);

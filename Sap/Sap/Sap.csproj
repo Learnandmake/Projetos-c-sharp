@@ -229,7 +229,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Database\Entities\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

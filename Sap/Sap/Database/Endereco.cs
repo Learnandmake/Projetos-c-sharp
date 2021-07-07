@@ -8,7 +8,7 @@ namespace Sap.Database
 {
     class endereco
     {
-        Database.Entities.estudoEntities banco = new  Database.Entities.estudoEntities();
+        Entities.estudoEntities1 banco = new Entities.estudoEntities1();
 
 
         public void inserir(Entities.endereco dados)

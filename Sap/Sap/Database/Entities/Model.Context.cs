@@ -13,10 +13,10 @@ namespace Sap.Database.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class estudoEntities : DbContext
+    public partial class estudoEntities1 : DbContext
     {
-        public estudoEntities()
-            : base("name=estudoEntities")
+        public estudoEntities1()
+            : base("name=estudoEntities1")
         {
         }
     
